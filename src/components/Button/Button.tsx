@@ -6,12 +6,13 @@ export type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
   variant: 'normal' | 'rounded';
   colors: 'orange' | 'white' | 'orange__outline';
   width: number;
+  height?: number;
 };
 
-function Button({ variant, colors, width, children, ...props }: ButtonProps) {
+function Button({ variant, colors, width, height = 60, children, ...props }: ButtonProps) {
   return (
     <button
-      style={{ width: `${width}px` }}
+      style={{ width: `${width}px`, height: `${height}px` }}
       className={`${styles[variant]} ${styles[colors]}`}
       {...props}
     >
