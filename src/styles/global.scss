@@ -1,12 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
   --bg-color: #f3f2f1;
   --gray-900: #222222;
   --orange-300: #fd8d3a;
   --orange-400: #fa7436;
+  --blue-800: #2a224f;
   --font-poppins: 'Poppins', sans-serif;
   --font-volkhov: 'Volkhov', sans-serif;
+  --font-inter: 'Inter', sans-serif;
 }
 
 * {
@@ -16,6 +18,7 @@
 }
 
 @import './buttons';
+@import './form';
 
 html, body {
   width: 100vw;
