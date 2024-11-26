@@ -4,6 +4,7 @@ import ConfirmDialog, {
   ConfirmDialogProps,
 } from './components/ConfirmDialog/ConfirmDialog';
 import Input, { InputProps } from './components/Input/Input';
+import Modal, { ModalProps } from './components/Modal/Modal';
 import NotificationDialog, {
   NotificationDialogProps,
 } from './components/NotificationDialog/NotificationDialog';
@@ -17,6 +18,8 @@ export {
   ConfirmDialogProps,
   Input,
   InputProps,
+  Modal,
+  ModalProps,
   NotificationDialog,
   NotificationDialogProps,
 };
