@@ -1,3 +1,4 @@
-import Chip from "./components/Chip/Chip";
+import Chip, { ChipProps } from './components/Chip/Chip';
+import Button, { ButtonProps } from './components/Button/Button';
 
-export { Chip };
+export { Chip, ChipProps, Button, ButtonProps };
