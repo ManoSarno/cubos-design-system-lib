@@ -1,0 +1,180 @@
+﻿bun.exe : $ tsdx build
+No C:\Users\manoe\AppData\Roaming\npm\bun.ps1:14 caractere:3
++   & "$basedir/node_modules/bun/bin/bun.exe"   $args
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ($ tsdx build:String) [], RemoteEx 
+   ception
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+- Cleaning dist folder...
+Ô£ö Cleaned dist folder
+- Building with bunchee...
+[31mÔ¿»[39m Error [RollupError]: src/components/Chip/Chip.module.scss (1:0): 
+Expression expected (Note that you need plugins to import files that are not 
+JavaScript)
+    at Object.getRollupError (C:\Users\manoe\OneDrive\Documentos\GitHub\cubos-d
+esign-system-lib\node_modules\rollup\dist\shared\parseAst.js:289:41)
+    ... 4 lines matching cause stack trace ...
+    at async ModuleLoader.addModuleSource (C:\Users\manoe\OneDrive\Documentos\G
+itHub\cubos-design-system-lib\node_modules\rollup\dist\shared\rollup.js:23177:1
+3) {
+  cause: Error [RollupError]: Expression expected
+      at Object.getRollupError (C:\Users\manoe\OneDrive\Documentos\GitHub\cubos
+-design-system-lib\node_modules\rollup\dist\shared\parseAst.js:289:41)
+      at ParseError.initialise (C:\Users\manoe\OneDrive\Documentos\GitHub\cubos
+-design-system-lib\node_modules\rollup\dist\shared\rollup.js:16431:40)
+      at convertNode (C:\Users\manoe\OneDrive\Documentos\GitHub\cubos-design-sy
+stem-lib\node_modules\rollup\dist\shared\rollup.js:18407:10)
+      at convertProgram (C:\Users\manoe\OneDrive\Documentos\GitHub\cubos-design
+-system-lib\node_modules\rollup\dist\shared\rollup.js:17643:12)
+      at Module.setSource (C:\Users\manoe\OneDrive\Documentos\GitHub\cubos-desi
+gn-system-lib\node_modules\rollup\dist\shared\rollup.js:19379:24)
+      at async ModuleLoader.addModuleSource (C:\Users\manoe\OneDrive\Documentos
+\GitHub\cubos-design-system-lib\node_modules\rollup\dist\shared\rollup.js:23177
+:13) {
+    code: 'PARSE_ERROR',
+    pos: 0
+  },
+  code: 'PARSE_ERROR',
+  id: 'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\
+\src\\components\\Chip\\Chip.module.scss',
+  pos: 0,
+  loc: {
+    column: 0,
+    file: 'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-
+lib\\src\\components\\Chip\\Chip.module.scss',
+    line: 1
+  },
+  frame: '1: .chip {\r\n   ^\n2:   display: flex;\r\n3:   align-items: 
+center;\r',
+  watchFiles: [
+    'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\\s
+rc\\index.tsx',
+    'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\\s
+rc\\components\\Button\\Button.tsx',
+    'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\\s
+rc\\components\\Chip\\Chip.tsx',
+    'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\\s
+rc\\components\\ConfirmDialog\\ConfirmDialog.tsx',
+    'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\\s
+rc\\components\\Input\\Input.tsx',
+    'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\\s
+rc\\components\\Modal\\Modal.tsx',
+    'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\\s
+rc\\components\\NotificationDialog\\NotificationDialog.tsx',
+    'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\\s
+rc\\components\\Icons\\CautionIcon\\index.tsx',
+    'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\\s
+rc\\components\\Icons\\ArrowBackIcon\\index.tsx',
+    'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\\s
+rc\\components\\Icons\\SuccessIcon\\index.tsx',
+    'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\\s
+rc\\components\\Chip\\Chip.module.scss',
+    'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\\s
+rc\\components\\Input\\Input.module.scss',
+    'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\\s
+rc\\components\\ConfirmDialog\\ConfirmDialog.module.scss'
+  ],
+  Symbol(augmented): true
+}
+[31mÔ¿»[39m Error [RollupError]: src/components/Chip/Chip.module.scss (1:0): 
+Expression expected (Note that you need plugins to import files that are not 
+JavaScript)
+    at Object.getRollupError (C:\Users\manoe\OneDrive\Documentos\GitHub\cubos-d
+esign-system-lib\node_modules\rollup\dist\shared\parseAst.js:289:41)
+    ... 4 lines matching cause stack trace ...
+    at async ModuleLoader.addModuleSource (C:\Users\manoe\OneDrive\Documentos\G
+itHub\cubos-design-system-lib\node_modules\rollup\dist\shared\rollup.js:23177:1
+3) {
+  cause: Error [RollupError]: Expression expected
+      at Object.getRollupError (C:\Users\manoe\OneDrive\Documentos\GitHub\cubos
+-design-system-lib\node_modules\rollup\dist\shared\parseAst.js:289:41)
+      at ParseError.initialise (C:\Users\manoe\OneDrive\Documentos\GitHub\cubos
+-design-system-lib\node_modules\rollup\dist\shared\rollup.js:16431:40)
+      at convertNode (C:\Users\manoe\OneDrive\Documentos\GitHub\cubos-design-sy
+stem-lib\node_modules\rollup\dist\shared\rollup.js:18407:10)
+      at convertProgram (C:\Users\manoe\OneDrive\Documentos\GitHub\cubos-design
+-system-lib\node_modules\rollup\dist\shared\rollup.js:17643:12)
+      at Module.setSource (C:\Users\manoe\OneDrive\Documentos\GitHub\cubos-desi
+gn-system-lib\node_modules\rollup\dist\shared\rollup.js:19379:24)
+      at async ModuleLoader.addModuleSource (C:\Users\manoe\OneDrive\Documentos
+\GitHub\cubos-design-system-lib\node_modules\rollup\dist\shared\rollup.js:23177
+:13) {
+    code: 'PARSE_ERROR',
+    pos: 0
+  },
+  code: 'PARSE_ERROR',
+  id: 'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\
+\src\\components\\Chip\\Chip.module.scss',
+  pos: 0,
+  loc: {
+    column: 0,
+    file: 'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-
+lib\\src\\components\\Chip\\Chip.module.scss',
+    line: 1
+  },
+  frame: '1: .chip {\r\n   ^\n2:   display: flex;\r\n3:   align-items: 
+center;\r',
+  watchFiles: [
+    'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\\s
+rc\\index.tsx',
+    'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\\s
+rc\\components\\Button\\Button.tsx',
+    'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\\s
+rc\\components\\Chip\\Chip.tsx',
+    'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\\s
+rc\\components\\ConfirmDialog\\ConfirmDialog.tsx',
+    'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\\s
+rc\\components\\Input\\Input.tsx',
+    'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\\s
+rc\\components\\Modal\\Modal.tsx',
+    'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\\s
+rc\\components\\NotificationDialog\\NotificationDialog.tsx',
+    'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\\s
+rc\\components\\Icons\\CautionIcon\\index.tsx',
+    'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\\s
+rc\\components\\Icons\\ArrowBackIcon\\index.tsx',
+    'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\\s
+rc\\components\\Icons\\SuccessIcon\\index.tsx',
+    'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\\s
+rc\\components\\Chip\\Chip.module.scss',
+    'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\\s
+rc\\components\\Input\\Input.module.scss',
+    'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib\\s
+rc\\components\\ConfirmDialog\\ConfirmDialog.module.scss'
+  ],
+  Symbol(augmented): true
+}
+Ô£û Build failed
+ExecaError: Command failed with exit code 1: bunchee
+    at getFinalError (file:///C:/Users/manoe/OneDrive/Documentos/GitHub/cubos-d
+esign-system-lib/node_modules/execa/lib/return/final-error.js:6:9)
+    at makeError (file:///C:/Users/manoe/OneDrive/Documentos/GitHub/cubos-desig
+n-system-lib/node_modules/execa/lib/return/result.js:108:16)
+    at getAsyncResult (file:///C:/Users/manoe/OneDrive/Documentos/GitHub/cubos-
+design-system-lib/node_modules/execa/lib/methods/main-async.js:168:4)
+    at handlePromise (file:///C:/Users/manoe/OneDrive/Documentos/GitHub/cubos-d
+esign-system-lib/node_modules/execa/lib/methods/main-async.js:151:17)
+    at process.processTicksAndRejections 
+(node:internal/process/task_queues:104:5)
+    at async Command.<anonymous> (file:///C:/Users/manoe/OneDrive/Documentos/Gi
+tHub/cubos-design-system-lib/node_modules/tsdx/dist/index.js:161:9) {
+  shortMessage: 'Command failed with exit code 1: bunchee',
+  command: 'bunchee',
+  escapedCommand: 'bunchee',
+  cwd: 
+'C:\\Users\\manoe\\OneDrive\\Documentos\\GitHub\\cubos-design-system-lib',
+  durationMs: 6521.1797,
+  failed: true,
+  timedOut: false,
+  isCanceled: false,
+  isGracefullyCanceled: false,
+  isTerminated: false,
+  isMaxBuffer: false,
+  isForcefullyTerminated: false,
+  exitCode: 1,
+  stdio: [ undefined, undefined, undefined ],
+  ipcOutput: [],
+  pipedFrom: []
+}
+error: script "build" exited with code 1

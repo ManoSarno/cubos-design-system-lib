@@ -1,0 +1,58 @@
+{
+  "name": "cubos-design-system-lib",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "Manoela Sarno Fonseca",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "tsdx dev",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "test:watch": "tsdx test --watch",
+    "lint": "tsdx lint",
+    "format": "tsdx format",
+    "format:check": "tsdx format --check",
+    "typecheck": "tsdx typecheck",
+    "prepublishOnly": "bun run build"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.1.0",
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.17",
+    "@types/react-dom": "^18.3.5",
+    "bunchee": "^6.12.0",
+    "jsdom": "^25.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sass": "^1.101.0",
+    "tsdx": "^2.0.0",
+    "typescript": "^5.7.2"
+  }
+}
