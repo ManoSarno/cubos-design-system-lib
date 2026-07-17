@@ -1,8 +1,14 @@
-import React from 'react';
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import { Chip, Button, Input, NotificationDialog, ConfirmDialog, Modal } from '../src';
-import '../src/styles/global.css';
+import React, { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import {
+  Button,
+  Chip,
+  ConfirmDialog,
+  Input,
+  Modal,
+  NotificationDialog,
+} from "../src";
+import "../src/styles/global.css";
 
 const App = () => {
   const [open, setOpen] = React.useState(false);
@@ -10,14 +16,22 @@ const App = () => {
   const [openModal, setOpenModal] = React.useState(false);
 
   return (
-    <div style={{ padding: '32px', position: 'relative', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+    <div
+      style={{
+        padding: "32px",
+        position: "relative",
+        display: "flex",
+        flexDirection: "column",
+        gap: "16px",
+      }}
+    >
       <Chip
         title="Meu componente Chip"
         width={300}
         color="orange"
         type="outlined"
       />
-      
+
       <Button
         variant="normal"
         colors="orange__outline"
@@ -26,7 +40,7 @@ const App = () => {
       >
         Abrir Notification Dialog
       </Button>
-      
+
       <Button
         variant="normal"
         colors="orange"
@@ -35,7 +49,7 @@ const App = () => {
       >
         Abrir Confirm Dialog
       </Button>
-      
+
       <Button
         variant="normal"
         colors="white"
@@ -44,7 +58,7 @@ const App = () => {
       >
         Abrir Modal
       </Button>
-      
+
       <Input
         labelId="input-name"
         labelText="Name"
@@ -54,7 +68,7 @@ const App = () => {
         iconPosition="left"
         placeholder="Digite seu nome"
       />
-      
+
       <NotificationDialog
         open={open}
         type="success"
@@ -85,10 +99,13 @@ const App = () => {
         handleCancel={() => setOpenModal(false)}
       >
         <h1>Meu Modal</h1>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
           <h2>Meu sub título</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed cumque nulla exercitationem rerum eius in optio laborum, aut excepturi temporibus quam perferendis! Omnis tenetur incidunt aliquam voluptates vel delectus harum!
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed cumque
+            nulla exercitationem rerum eius in optio laborum, aut excepturi
+            temporibus quam perferendis! Omnis tenetur incidunt aliquam
+            voluptates vel delectus harum!
           </p>
         </div>
       </Modal>
@@ -96,11 +113,11 @@ const App = () => {
   );
 };
 
-const root = document.getElementById('root');
+const root = document.getElementById("root");
 if (root) {
   createRoot(root).render(
     <StrictMode>
       <App />
-    </StrictMode>
+    </StrictMode>,
   );
 }

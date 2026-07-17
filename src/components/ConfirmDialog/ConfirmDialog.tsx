@@ -1,43 +1,52 @@
-import "./ConfirmDialog.css";
-import SuccessIcon from "../Icons/SuccessIcon";
-import CautionIcon from "../Icons/CautionIcon";
 import Button from "../Button/Button";
+import CautionIcon from "../Icons/CautionIcon";
+import SuccessIcon from "../Icons/SuccessIcon";
+import "./ConfirmDialog.css";
 
 export interface ConfirmDialogProps {
   open: boolean;
-  type: 'error' | 'success';
+  type: "error" | "success";
   title: string;
   description: string;
   btnConfirmText: string;
   btnCancelText: string;
   handleConfirm: () => void;
   handleCancel: () => void;
-};
+}
 
-function ConfirmDialog({ open, type, title, description, btnConfirmText, handleConfirm, btnCancelText, handleCancel, ...props }: ConfirmDialogProps) {
-
+function ConfirmDialog({
+  open,
+  type,
+  title,
+  description,
+  btnConfirmText,
+  handleConfirm,
+  btnCancelText,
+  handleCancel,
+  ...props
+}: ConfirmDialogProps) {
   return (
     <>
       {open && (
-        <div className='cubos-confirm-dialog' {...props}>
-          <div className='cubos-confirm-dialog__content'>
-            <div className='cubos-confirm-dialog__icon'>
-              {type === 'error' ? <CautionIcon /> : <SuccessIcon />}
+        <div className="cubos-confirm-dialog" {...props}>
+          <div className="cubos-confirm-dialog__content">
+            <div className="cubos-confirm-dialog__icon">
+              {type === "error" ? <CautionIcon /> : <SuccessIcon />}
             </div>
             <strong>{title}</strong>
             <p>{description}</p>
-            <div className='cubos-confirm-dialog__buttons'>
+            <div className="cubos-confirm-dialog__buttons">
               <Button
-                variant='normal'
-                colors='orange'
+                variant="normal"
+                colors="orange"
                 onClick={handleCancel}
                 width={140}
               >
                 Cancel
               </Button>
               <Button
-                variant='normal'
-                colors='orange__outline'
+                variant="normal"
+                colors="orange__outline"
                 onClick={handleConfirm}
                 width={190}
               >
@@ -49,6 +58,6 @@ function ConfirmDialog({ open, type, title, description, btnConfirmText, handleC
       )}
     </>
   );
-};
+}
 
 export default ConfirmDialog;

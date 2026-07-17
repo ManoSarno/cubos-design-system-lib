@@ -1,6 +1,6 @@
-import { HTMLAttributes } from 'react';
-import "./Modal.css";
+import { HTMLAttributes } from "react";
 import Button from "../Button/Button";
+import "./Modal.css";
 
 export type ModalProps = HTMLAttributes<HTMLElement> & {
   open: boolean;
@@ -12,19 +12,30 @@ export type ModalProps = HTMLAttributes<HTMLElement> & {
   handleCancel: () => void;
 };
 
-function Modal({ open, width, height, btnConfirmText, handleConfirm, btnCancelText, handleCancel, ...props }: ModalProps) {
-
+function Modal({
+  open,
+  width,
+  height,
+  btnConfirmText,
+  handleConfirm,
+  btnCancelText,
+  handleCancel,
+  ...props
+}: ModalProps) {
   return (
     <>
       {open && (
-        <div className='cubos-modal' {...props}>
-          <div className='cubos-modal__content' style={{ width: `${width}px`, height: `${height}px` }}>
+        <div className="cubos-modal" {...props}>
+          <div
+            className="cubos-modal__content"
+            style={{ width: `${width}px`, height: `${height}px` }}
+          >
             <div>{props.children}</div>
 
-            <div className='cubos-modal__buttons'>
+            <div className="cubos-modal__buttons">
               <Button
-                variant='rounded'
-                colors='white'
+                variant="rounded"
+                colors="white"
                 onClick={handleCancel}
                 width={205}
                 height={51}
@@ -32,8 +43,8 @@ function Modal({ open, width, height, btnConfirmText, handleConfirm, btnCancelTe
                 {btnCancelText}
               </Button>
               <Button
-                variant='rounded'
-                colors='orange'
+                variant="rounded"
+                colors="orange"
                 onClick={handleConfirm}
                 width={110}
                 height={51}
@@ -46,6 +57,6 @@ function Modal({ open, width, height, btnConfirmText, handleConfirm, btnCancelTe
       )}
     </>
   );
-};
+}
 
 export default Modal;

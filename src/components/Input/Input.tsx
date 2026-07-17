@@ -1,5 +1,5 @@
-import { InputHTMLAttributes } from 'react';
-import './Input.css';
+import { InputHTMLAttributes } from "react";
+import "./Input.css";
 
 export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   labelText?: string;
@@ -7,31 +7,43 @@ export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   width: number;
   height?: number;
   icon?: string;
-  iconPosition?: 'left' | 'right';
+  iconPosition?: "left" | "right";
   iconSize?: number;
 };
 
-function Input({labelText, labelId, width, height, icon, iconPosition = 'left', iconSize = 32, ...props}: InputProps) {
+function Input({
+  labelText,
+  labelId,
+  width,
+  height,
+  icon,
+  iconPosition = "left",
+  iconSize = 32,
+  ...props
+}: InputProps) {
   const inputHeight = height ?? 60;
   const iconTop = `${(inputHeight - iconSize) / 2}px`;
   const iconSpace = iconSize + 26;
 
   const paddingIcon =
-    iconPosition === 'left'
+    iconPosition === "left"
       ? `0 18px 0 ${iconSpace}px`
       : `0 ${iconSpace}px 0 18px`;
 
   return (
-    <div className='cubos-input' style={{ width: `${width}px` }}>
+    <div className="cubos-input" style={{ width: `${width}px` }}>
       {labelText && <label htmlFor={labelId}>{labelText}</label>}
 
-      <div className='cubos-input__field' style={{ height: `${inputHeight}px` }}>
+      <div
+        className="cubos-input__field"
+        style={{ height: `${inputHeight}px` }}
+      >
         {icon && (
           <img
             src={icon}
-            alt='icon'
+            alt="icon"
             style={{
-              [iconPosition]: '16px',
+              [iconPosition]: "16px",
               top: iconTop,
               height: `${iconSize}px`,
               width: `${iconSize}px`,
@@ -41,9 +53,12 @@ function Input({labelText, labelId, width, height, icon, iconPosition = 'left', 
 
         <input
           id={labelId}
-          type='text'
+          type="text"
           {...props}
-          style={{ height: `${inputHeight}px`, padding: icon ? paddingIcon : '0 18px' }}
+          style={{
+            height: `${inputHeight}px`,
+            padding: icon ? paddingIcon : "0 18px",
+          }}
         />
       </div>
     </div>

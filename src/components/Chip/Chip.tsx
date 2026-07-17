@@ -1,24 +1,21 @@
-import './Chip.css';
+import "./Chip.css";
 
 export interface ChipProps {
   title: string;
   width: number;
   color?: string;
   textColor?: string;
-  type?: 'filled' | 'outlined';
+  type?: "filled" | "outlined";
 }
 
-function Chip({title, width, color, textColor, type}: ChipProps) {
+function Chip({ title, width, color, textColor, type }: ChipProps) {
   const style =
-    type === 'filled'
+    type === "filled"
       ? { backgroundColor: color, color: textColor }
       : { color: color, border: `1px solid ${color}` };
 
   return (
-    <div
-      className='cubos-chip'
-      style={{ ...style, width: `${width}px` }}
-    >
+    <div className="cubos-chip" style={{ ...style, width: `${width}px` }}>
       {title}
     </div>
   );
