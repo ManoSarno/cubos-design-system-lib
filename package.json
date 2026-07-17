@@ -21,8 +21,7 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "engines": {
     "node": ">=20"
@@ -36,7 +35,7 @@
     "format": "tsdx format",
     "format:check": "tsdx format --check",
     "typecheck": "tsdx typecheck",
-    "prepublishOnly": "bun run build"
+    "prepublishOnly": "bun run typecheck && bun run build"
   },
   "peerDependencies": {
     "react": ">=18",
