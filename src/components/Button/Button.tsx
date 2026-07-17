@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { HTMLAttributes } from 'react';
 import './Button.css';
 
@@ -10,7 +9,7 @@ export type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
 };
 
 function Button({ variant, colors, width, height = 60, children, ...props }: ButtonProps) {
-  const className = `${variant} ${colors}`;
+  const className = `cubos-button cubos-button--${variant} cubos-button--${colors}`;
 
   return (
     <button

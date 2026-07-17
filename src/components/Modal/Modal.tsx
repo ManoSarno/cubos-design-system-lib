@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { HTMLAttributes } from 'react';
 import "./Modal.css";
 import Button from "../Button/Button";
@@ -18,13 +17,29 @@ function Modal({ open, width, height, btnConfirmText, handleConfirm, btnCancelTe
   return (
     <>
       {open && (
-        <div className='container' {...props}>
-          <div className='dialog' style={{ width: `${width}px`, height: `${height}px` }}>
+        <div className='cubos-modal' {...props}>
+          <div className='cubos-modal__content' style={{ width: `${width}px`, height: `${height}px` }}>
             <div>{props.children}</div>
 
-            <div className='dialog__buttons'>
-              <Button variant='rounded' colors='white' onClick={handleCancel} width={205} height={51}>Cancel</Button>
-              <Button variant='rounded' colors='orange' onClick={handleConfirm} width={110} height={51}>Confirm</Button>
+            <div className='cubos-modal__buttons'>
+              <Button
+                variant='rounded'
+                colors='white'
+                onClick={handleCancel}
+                width={205}
+                height={51}
+              >
+                {btnCancelText}
+              </Button>
+              <Button
+                variant='rounded'
+                colors='orange'
+                onClick={handleConfirm}
+                width={110}
+                height={51}
+              >
+                {btnConfirmText}
+              </Button>
             </div>
           </div>
         </div>

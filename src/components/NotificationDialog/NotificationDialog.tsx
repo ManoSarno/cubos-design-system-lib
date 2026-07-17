@@ -1,4 +1,3 @@
-import * as React from 'react';
 import "./NotificationDialog.css";
 import SuccessIcon from "../Icons/SuccessIcon";
 import CautionIcon from "../Icons/CautionIcon";
@@ -25,16 +24,16 @@ function NotificationDialog({ open, type, title, description, actionText, handle
   return (
     <>
       {open && (
-        <div className='container' {...props}>
-          <div className='dialog'>
-            <div className='icon'>
+        <div className='cubos-notification-dialog' {...props}>
+          <div className='cubos-notification-dialog__content'>
+            <div className='cubos-notification-dialog__icon'>
               {type === 'error' ? <CautionIcon /> : <SuccessIcon />}
             </div>
             <strong>{title}</strong>
             <p>{description}</p>
 
             {(handleNextLocation || handleClose) && (
-              <div className='next-location'>
+              <div className='cubos-notification-dialog__next-location'>
                 <ArrowBackIcon />
                 <a href='#' onClick={handleNavigate}>
                   {actionText}

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import './Chip.css';
 
 export interface ChipProps {
@@ -17,7 +16,7 @@ function Chip({title, width, color, textColor, type}: ChipProps) {
 
   return (
     <div
-      className='chip'
+      className='cubos-chip'
       style={{ ...style, width: `${width}px` }}
     >
       {title}

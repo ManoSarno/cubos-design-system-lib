@@ -1,8 +1,7 @@
-import * as React from 'react';
-import { HTMLAttributes } from 'react';
+import { InputHTMLAttributes } from 'react';
 import './Input.css';
 
-export type InputProps = HTMLAttributes<HTMLInputElement> & {
+export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   labelText?: string;
   labelId?: string;
   width: number;
@@ -13,16 +12,40 @@ export type InputProps = HTMLAttributes<HTMLInputElement> & {
 };
 
 function Input({labelText, labelId, width, height, icon, iconPosition = 'left', iconSize = 32, ...props}: InputProps) {
+  const inputHeight = height ?? 60;
+  const iconTop = `${(inputHeight - iconSize) / 2}px`;
+  const iconSpace = iconSize + 26;
 
-  const paddingIcon = iconPosition === 'left' ? '0 18px 0 40px' : '0 40px 0 18px';
+  const paddingIcon =
+    iconPosition === 'left'
+      ? `0 18px 0 ${iconSpace}px`
+      : `0 ${iconSpace}px 0 18px`;
 
   return (
-    <div className='container-input' style={{ width: `${width}px` }}>
+    <div className='cubos-input' style={{ width: `${width}px` }}>
       {labelText && <label htmlFor={labelId}>{labelText}</label>}
 
-      {icon && <img src={icon} alt='icon' style={{ [iconPosition]: '16px', bottom: height ? `calc(${height}px/2.5)` : '16px', width: `${iconSize}px`, height: 'auto' }} />}
+      <div className='cubos-input__field' style={{ height: `${inputHeight}px` }}>
+        {icon && (
+          <img
+            src={icon}
+            alt='icon'
+            style={{
+              [iconPosition]: '16px',
+              top: iconTop,
+              height: `${iconSize}px`,
+              width: `${iconSize}px`,
+            }}
+          />
+        )}
 
-      <input id={labelId} type='text' {...props} style={{ height: height ? `${height}px` : '60px', padding: icon ? paddingIcon : '0 18px' }} />
+        <input
+          id={labelId}
+          type='text'
+          {...props}
+          style={{ height: `${inputHeight}px`, padding: icon ? paddingIcon : '0 18px' }}
+        />
+      </div>
     </div>
   );
 }

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import "./ConfirmDialog.css";
 import SuccessIcon from "../Icons/SuccessIcon";
 import CautionIcon from "../Icons/CautionIcon";
@@ -20,16 +19,30 @@ function ConfirmDialog({ open, type, title, description, btnConfirmText, handleC
   return (
     <>
       {open && (
-        <div className='container' {...props}>
-          <div className='dialog'>
-            <div className='icon'>
+        <div className='cubos-confirm-dialog' {...props}>
+          <div className='cubos-confirm-dialog__content'>
+            <div className='cubos-confirm-dialog__icon'>
               {type === 'error' ? <CautionIcon /> : <SuccessIcon />}
             </div>
             <strong>{title}</strong>
             <p>{description}</p>
-            <div className='dialog__buttons'>
-              <Button variant='normal' colors='orange' onClick={handleCancel} width={140}>Cancel</Button>
-              <Button variant='normal' colors='orange__outline' onClick={handleConfirm} width={190}>Confirm</Button>
+            <div className='cubos-confirm-dialog__buttons'>
+              <Button
+                variant='normal'
+                colors='orange'
+                onClick={handleCancel}
+                width={140}
+              >
+                Cancel
+              </Button>
+              <Button
+                variant='normal'
+                colors='orange__outline'
+                onClick={handleConfirm}
+                width={190}
+              >
+                Confirm
+              </Button>
             </div>
           </div>
         </div>

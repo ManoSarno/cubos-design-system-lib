@@ -1,4 +1,4 @@
-.container {
+.cubos-notification-dialog {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,7 +12,7 @@
   left: 0;
 }
 
-.dialog {
+.cubos-notification-dialog__content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,8 +27,8 @@
   padding: 32px;
 }
 
-.dialog strong {
-  margin: 24px 0 16px;
+.cubos-notification-dialog__content strong {
+  margin-top: 24px;
 
   color: #282a2f;
   text-align: center;
@@ -39,7 +39,7 @@
   line-height: 152%;
 }
 
-.dialog p {
+.cubos-notification-dialog__content p {
   color: rgba(34, 34, 38, 0.82);
   text-align: center;
   font-family: var(--font-poppins);
@@ -49,17 +49,17 @@
   line-height: 160%;
 }
 
-.icon {
+.cubos-notification-dialog__icon {
   width: 200px;
   height: auto;
 }
 
-.icon svg {
+.cubos-notification-dialog__icon svg {
   width: 100%;
   height: auto;
 }
 
-.next-location {
+.cubos-notification-dialog__next-location {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -68,7 +68,7 @@
   margin-top: 24px;
 }
 
-.next-location svg {
+.cubos-notification-dialog__next-location svg {
   width: 24px;
   height: 24px;
 }

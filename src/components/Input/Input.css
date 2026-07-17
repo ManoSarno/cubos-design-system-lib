@@ -1,4 +1,4 @@
-.container-input {
+.cubos-input {
   display: flex;
   flex-direction: column;
 
@@ -6,7 +6,11 @@
   position: relative;
 }
 
-.container-input label {
+.cubos-input__field {
+  position: relative;
+}
+
+.cubos-input label {
   margin-bottom: 4px;
 
   color: var(--blue-800);
@@ -17,7 +21,7 @@
   line-height: 182%;
 }
 
-.container-input img {
+.cubos-input img {
   position: absolute;
-  width: 16px;
+  object-fit: contain;
 }
