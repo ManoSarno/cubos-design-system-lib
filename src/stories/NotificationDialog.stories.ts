@@ -11,7 +11,7 @@ const meta = {
     layout: "fullscreen",
     docs: {
       story: {
-        height: "720px",
+        height: "750px",
         inline: false,
       },
     },

@@ -1,0 +1,51 @@
+.modal-example {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.modal-example__content {
+  display: grid;
+  gap: 12px;
+}
+
+.modal-example__eyebrow,
+.modal-example__title,
+.modal-example__description {
+  margin: 0;
+  font-family: var(--font-family, "Poppins", sans-serif);
+}
+
+.modal-example__eyebrow {
+  color: #d95d0b;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.modal-example__title {
+  color: #202124;
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.modal-example__description {
+  max-width: 44ch;
+  color: #5f6368;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.modal-example__actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 520px) {
+  .modal-example__actions {
+    grid-template-columns: 1fr;
+  }
+}

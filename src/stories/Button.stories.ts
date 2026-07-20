@@ -13,17 +13,17 @@ const meta = {
   tags: ["autodocs"],
   argTypes: {
     variant: {
+      control: "select",
+      options: ["primary", "secondary", "outline"],
+    },
+    shape: {
       control: "radio",
       options: ["normal", "rounded"],
-    },
-    colors: {
-      control: "select",
-      options: ["orange", "white", "orange__outline"],
     },
   },
   args: {
     children: "Button",
-    colors: "orange",
+    variant: "primary",
     onClick: fn(),
     width: 200,
   },
@@ -32,44 +32,44 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const NormalOrange: Story = {
+export const Primary: Story = {
   args: {
-    variant: "normal",
-    colors: "orange",
+    variant: "primary",
+    shape: "normal",
   },
 };
 
-export const NormalWhite: Story = {
+export const Secondary: Story = {
   args: {
-    variant: "normal",
-    colors: "white",
+    variant: "secondary",
+    shape: "normal",
   },
 };
 
-export const NormalOutlined: Story = {
+export const Outline: Story = {
   args: {
-    variant: "normal",
-    colors: "orange__outline",
+    variant: "outline",
+    shape: "normal",
   },
 };
 
-export const RoundedOrange: Story = {
+export const RoundedPrimary: Story = {
   args: {
-    variant: "rounded",
-    colors: "orange",
+    variant: "primary",
+    shape: "rounded",
   },
 };
 
-export const RoundedWhite: Story = {
+export const RoundedSecondary: Story = {
   args: {
-    variant: "rounded",
-    colors: "white",
+    variant: "secondary",
+    shape: "rounded",
   },
 };
 
-export const RoundedOutlined: Story = {
+export const RoundedOutline: Story = {
   args: {
-    variant: "rounded",
-    colors: "orange__outline",
+    variant: "outline",
+    shape: "rounded",
   },
 };

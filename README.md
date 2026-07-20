@@ -22,14 +22,17 @@ You can use `npm`, `pnpm`, or `yarn` instead of Bun.
 
 ## Theme Setup
 
-Component styles are included in the package. Define the design tokens used by
-the components in your application's global stylesheet:
+Component styles and default tokens are included in the package. Override the
+`--cubos-*` custom properties in your application's global stylesheet when you
+need to adapt the theme:
 
 ```css
 :root {
-  --font-poppins: "Poppins", sans-serif;
-  --orange-400: #fa7436;
-  --blue-800: #222222;
+  --cubos-font-family: "Poppins", sans-serif;
+  --cubos-color-primary: #fa7436;
+  --cubos-color-text: #282a2f;
+  --cubos-color-surface: #ffffff;
+  --cubos-radius-medium: 8px;
 }
 ```
 
@@ -50,14 +53,9 @@ import {
 export function SearchForm() {
   return (
     <form>
-      <Input
-        labelId="search"
-        labelText="Search"
-        placeholder="Search by name"
-        width={320}
-      />
+      <Input labelId="search" labelText="Search" placeholder="Search by name" width={320} />
 
-      <Button variant="normal" colors="orange" width={160}>
+      <Button variant="primary" shape="normal" width={160}>
         Search
       </Button>
     </form>
@@ -75,26 +73,21 @@ color styles.
 ```tsx
 import { Button } from "@manosarno/cubos-design-system-lib";
 
-<Button
-  variant="rounded"
-  colors="orange__outline"
-  width={200}
-  onClick={() => console.log("Clicked")}
->
+<Button variant="outline" shape="rounded" width={200} onClick={() => console.log("Clicked")}>
   Continue
 </Button>;
 ```
 
-| Prop       | Type                                       | Required | Default   | Description                |
-| ---------- | ------------------------------------------ | -------- | --------- | -------------------------- |
-| `variant`  | `"normal" \| "rounded"`                    | Yes      | -         | Controls the button shape. |
-| `colors`   | `"orange" \| "white" \| "orange__outline"` | Yes      | -         | Controls the visual style. |
-| `width`    | `number`                                   | Yes      | -         | Button width in pixels.    |
-| `height`   | `number`                                   | No       | `60`      | Button height in pixels.   |
-| `children` | `ReactNode`                                | No       | `"Click"` | Button content.            |
+| Prop       | Type                                    | Required | Default    | Description                  |
+| ---------- | --------------------------------------- | -------- | ---------- | ---------------------------- |
+| `variant`  | `"primary" \| "secondary" \| "outline"` | Yes      | -          | Controls the semantic style. |
+| `shape`    | `"normal" \| "rounded"`                 | No       | `"normal"` | Controls the button shape.   |
+| `width`    | `number`                                | Yes      | -          | Button width in pixels.      |
+| `height`   | `number`                                | No       | `60`       | Button height in pixels.     |
+| `children` | `ReactNode`                             | No       | `"Click"`  | Button content.              |
 
-The component also accepts shared HTML attributes such as `onClick`, `id`,
-`className`, and `aria-*`.
+The component also accepts standard button attributes such as `onClick`,
+`type`, `disabled`, `className`, and `aria-*`.
 
 ### Input
 
@@ -136,22 +129,16 @@ Use chips to display compact statuses, categories, or labels.
 ```tsx
 import { Chip } from "@manosarno/cubos-design-system-lib";
 
-<Chip
-  title="Active"
-  type="filled"
-  width={120}
-  color="#fa7436"
-  textColor="#ffffff"
-/>;
+<Chip title="Active" type="filled" width={120} color="#fa7436" textColor="#ffffff" />;
 ```
 
-| Prop        | Type                     | Required | Default | Description                                                                    |
-| ----------- | ------------------------ | -------- | ------- | ------------------------------------------------------------------------------ |
-| `title`     | `string`                 | Yes      | -       | Text displayed inside the chip.                                                |
-| `width`     | `number`                 | Yes      | -       | Chip width in pixels.                                                          |
-| `type`      | `"filled" \| "outlined"` | No       | -       | Controls whether the chip has a filled background or an outline.               |
-| `color`     | `string`                 | No       | -       | Background color for filled chips or border and text color for outlined chips. |
-| `textColor` | `string`                 | No       | -       | Text color used by filled chips.                                               |
+| Prop        | Type                     | Required | Default      | Description                                                                    |
+| ----------- | ------------------------ | -------- | ------------ | ------------------------------------------------------------------------------ |
+| `title`     | `string`                 | Yes      | -            | Text displayed inside the chip.                                                |
+| `width`     | `number`                 | Yes      | -            | Chip width in pixels.                                                          |
+| `type`      | `"filled" \| "outlined"` | No       | `"outlined"` | Controls whether the chip has a filled background or an outline.               |
+| `color`     | `string`                 | No       | -            | Background color for filled chips or border and text color for outlined chips. |
+| `textColor` | `string`                 | No       | -            | Text color used by filled chips.                                               |
 
 ### Modal
 
@@ -166,12 +153,7 @@ export function ModalExample() {
 
   return (
     <>
-      <Button
-        variant="normal"
-        colors="orange"
-        width={180}
-        onClick={() => setOpen(true)}
-      >
+      <Button variant="primary" shape="normal" width={180} onClick={() => setOpen(true)}>
         Open modal
       </Button>
 
@@ -272,13 +254,19 @@ All component prop types are exported from the package root:
 ```ts
 import type {
   ButtonProps,
+  ButtonShape,
+  ButtonVariant,
   ChipProps,
+  ChipVariant,
   ConfirmDialogProps,
   InputProps,
   ModalProps,
   NotificationDialogProps,
 } from "@manosarno/cubos-design-system-lib";
 ```
+
+The package also exports `ArrowBackIcon`, `CautionIcon`, and `SuccessIcon`
+alongside their prop types for custom compositions.
 
 ## Local Development
 

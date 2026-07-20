@@ -1,0 +1,392 @@
+.sbdocs.sbdocs-wrapper {
+  padding: 0;
+  background: #f7f8fa;
+}
+
+.sbdocs .sbdocs-content {
+  max-width: none;
+}
+
+.cubos-welcome {
+  --welcome-ink: #17202a;
+  --welcome-muted: #66727f;
+  --welcome-orange: #fa7436;
+  --welcome-green: #16856b;
+  overflow: hidden;
+  color: var(--welcome-ink);
+  background: #ffffff;
+  font-family: "Inter", sans-serif;
+}
+
+.cubos-welcome * {
+  box-sizing: border-box;
+}
+
+.cubos-welcome__hero {
+  position: relative;
+  min-height: 610px;
+  padding: 76px clamp(28px, 8vw, 112px) 54px;
+  background: #fff8f4;
+  border-bottom: 1px solid #eadfd9;
+}
+
+.cubos-welcome__hero::after {
+  position: absolute;
+  top: 0;
+  right: clamp(28px, 8vw, 112px);
+  bottom: 0;
+  width: 12px;
+  background: var(--welcome-orange);
+  content: "";
+}
+
+.cubos-welcome__mark {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 6px;
+  color: #ffffff;
+  background: var(--welcome-ink);
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.cubos-welcome__eyebrow,
+.cubos-welcome__section-heading > p {
+  margin: 52px 0 12px;
+  color: var(--welcome-orange);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.cubos-welcome__hero h1 {
+  max-width: 780px;
+  margin: 0;
+  color: var(--welcome-ink);
+  font-size: 76px;
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.cubos-welcome__intro {
+  max-width: 650px;
+  margin: 28px 0 0;
+  color: #4c5863;
+  font-size: 20px;
+  line-height: 1.65;
+}
+
+.cubos-welcome__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.cubos-welcome__actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 20px;
+  border: 1px solid #cdd3d8;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.cubos-welcome a.cubos-welcome__primary-action,
+.cubos-welcome a.cubos-welcome__primary-action:hover,
+.cubos-welcome a.cubos-welcome__primary-action:visited {
+  color: #ffffff !important;
+  background: var(--welcome-orange);
+  border-color: var(--welcome-orange);
+  -webkit-text-fill-color: #ffffff;
+}
+
+.cubos-welcome__secondary-action {
+  color: var(--welcome-ink) !important;
+  background: #ffffff;
+}
+
+.cubos-welcome__highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin: 44px 0 0 !important;
+  padding: 0;
+  color: #46515b;
+  font-size: 12px !important;
+  font-weight: 700;
+  list-style: none !important;
+  text-transform: uppercase;
+}
+
+.cubos-welcome__highlights li {
+  margin: 0 !important;
+}
+
+.cubos-welcome__highlights li::before {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin: 0 8px 2px 0;
+  border-radius: 50%;
+  background: var(--welcome-green);
+  content: "";
+}
+
+.cubos-welcome__section,
+.cubos-welcome__principles {
+  padding: 88px clamp(28px, 8vw, 112px);
+}
+
+.cubos-welcome__section-heading {
+  max-width: 650px;
+}
+
+.cubos-welcome__section-heading > p {
+  margin: 0 0 10px;
+}
+
+.cubos-welcome__section-heading h2 {
+  margin: 0;
+  color: var(--welcome-ink);
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.cubos-welcome__section-heading > span {
+  display: block;
+  margin-top: 14px;
+  color: var(--welcome-muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.cubos-welcome__code-grid,
+.cubos-welcome__principles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 38px !important;
+}
+
+.cubos-welcome__code-block {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #d9dee3;
+  border-radius: 6px;
+}
+
+.cubos-welcome__code-block > p {
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  padding: 13px 16px;
+  color: #4d5964;
+  background: #f3f5f6;
+  border-bottom: 1px solid #d9dee3;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.cubos-welcome__code-block > p span {
+  color: var(--welcome-orange);
+}
+
+.sbdocs .cubos-welcome .cubos-welcome__code-block pre {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  min-height: 96px;
+  margin: 0;
+  padding: 20px;
+  overflow-x: auto;
+  border: 0;
+  border-radius: 0;
+  background: var(--welcome-ink) !important;
+}
+
+.sbdocs .cubos-welcome .cubos-welcome__code-block code {
+  color: #f8fafb !important;
+  background: transparent !important;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.cubos-welcome__principles {
+  color: #ffffff;
+  background: var(--welcome-ink);
+}
+
+.cubos-welcome__section-heading--light h2 {
+  color: #ffffff;
+}
+
+.cubos-welcome__principles-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: #39424b;
+  border: 1px solid #39424b;
+}
+
+.cubos-welcome__principles article {
+  min-height: 210px;
+  padding: 28px;
+  background: var(--welcome-ink);
+}
+
+.cubos-welcome__principles article > span {
+  color: #65c6aa;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.cubos-welcome__principles h3 {
+  margin: 50px 0 10px;
+  color: #ffffff;
+  font-size: 21px;
+  letter-spacing: 0;
+}
+
+.cubos-welcome__principles article p {
+  margin: 0;
+  color: #b9c1c8;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.cubos-welcome__browse {
+  background: #f7f8fa;
+}
+
+.cubos-welcome__category-list {
+  margin-top: 38px;
+  border-top: 1px solid #ccd3d9;
+}
+
+.cubos-welcome__category-list a {
+  display: grid;
+  grid-template-columns: 52px 1fr 32px;
+  align-items: center;
+  gap: 18px;
+  min-height: 92px;
+  padding: 14px 4px;
+  color: var(--welcome-ink) !important;
+  border-bottom: 1px solid #ccd3d9;
+  text-decoration: none;
+}
+
+.cubos-welcome__category-list a:hover {
+  padding-right: 16px;
+  padding-left: 16px;
+  background: #ffffff;
+}
+
+.cubos-welcome__category-list b {
+  color: var(--welcome-orange);
+  font-size: 12px;
+}
+
+.cubos-welcome__category-list span {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cubos-welcome__category-list strong {
+  font-size: 17px;
+}
+
+.cubos-welcome__category-list small {
+  color: var(--welcome-muted);
+  font-size: 13px;
+}
+
+.cubos-welcome__category-list i {
+  color: var(--welcome-green);
+  font-size: 22px;
+  font-style: normal;
+}
+
+.cubos-welcome__footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 34px clamp(28px, 8vw, 112px);
+  background: #ffffff;
+  border-top: 1px solid #e1e5e8;
+}
+
+.cubos-welcome__footer .cubos-welcome__mark {
+  width: 38px;
+  height: 38px;
+  font-size: 19px;
+}
+
+.cubos-welcome__footer p {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin: 0;
+}
+
+.cubos-welcome__footer strong {
+  color: var(--welcome-ink);
+  font-size: 13px;
+}
+
+.cubos-welcome__footer span {
+  color: var(--welcome-muted);
+  font-size: 12px;
+}
+
+@media (max-width: 760px) {
+  .cubos-welcome__hero {
+    min-height: 570px;
+    padding-top: 42px;
+  }
+
+  .cubos-welcome__hero::after {
+    right: 18px;
+    width: 7px;
+  }
+
+  .cubos-welcome__hero h1 {
+    font-size: 48px;
+  }
+
+  .cubos-welcome__intro {
+    font-size: 17px;
+  }
+
+  .cubos-welcome__code-grid,
+  .cubos-welcome__principles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cubos-welcome__section,
+  .cubos-welcome__principles {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .cubos-welcome__section-heading h2 {
+    font-size: 30px;
+  }
+
+  .cubos-welcome__category-list a {
+    grid-template-columns: 34px 1fr 24px;
+    gap: 10px;
+  }
+}
