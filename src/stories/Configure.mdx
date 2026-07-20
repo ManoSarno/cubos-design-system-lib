@@ -1,388 +1,527 @@
 import { Meta } from "@storybook/addon-docs/blocks";
 
-import Github from "./assets/github.svg";
-import Discord from "./assets/discord.svg";
-import Youtube from "./assets/youtube.svg";
-import Tutorials from "./assets/tutorials.svg";
-import Styling from "./assets/styling.png";
-import Context from "./assets/context.png";
-import Assets from "./assets/assets.png";
-import Docs from "./assets/docs.png";
-import Share from "./assets/share.png";
-import FigmaPlugin from "./assets/figma-plugin.png";
-import Testing from "./assets/testing.png";
-import Accessibility from "./assets/accessibility.png";
-import Theming from "./assets/theming.png";
-import AddonLibrary from "./assets/addon-library.png";
+<Meta title="Welcome" />
 
-export const RightArrow = () => <svg 
-    viewBox="0 0 14 14" 
-    width="8px" 
-    height="14px" 
-    style={{ 
-      marginLeft: '4px',
-      display: 'inline-block',
-      shapeRendering: 'inherit',
-      verticalAlign: 'middle',
-      fill: 'currentColor',
-      'path fill': 'currentColor'
-    }}
->
-  <path d="m11.1 7.35-5.5 5.5a.5.5 0 0 1-.7-.7L10.04 7 4.9 1.85a.5.5 0 1 1 .7-.7l5.5 5.5c.2.2.2.5 0 .7Z" />
-</svg>
-
-<Meta title="Configure your project" />
-
-<div className="sb-container">
-  <div className='sb-section-title'>
-    # Configure your project
-
-    Because Storybook works separately from your app, you'll need to configure it for your specific stack and setup. Below, explore guides for configuring Storybook with popular frameworks and tools. If you get stuck, learn how you can ask for help from our community.
-  </div>
-  <div className="sb-section">
-    <div className="sb-section-item">
-      <img
-        src={Styling}
-        alt="A wall of logos representing different styling technologies"
-      />
-      <h4 className="sb-section-item-heading">Add styling and CSS</h4>
-      <p className="sb-section-item-paragraph">Like with web applications, there are many ways to include CSS within Storybook. Learn more about setting up styling within Storybook.</p>
-      <a
-        className="sb-action-link"
-        href="https://storybook.js.org/docs/configure/styling-and-css/?renderer=react&ref=configure"
-        target="_blank"
-      >Learn more<RightArrow /></a>
+<main className="cubos-welcome">
+  <header className="cubos-welcome__hero">
+    <div className="cubos-welcome__mark" aria-hidden="true">C</div>
+    <p className="cubos-welcome__eyebrow">Welcome to</p>
+    <h1>Cubos Design System</h1>
+    <p className="cubos-welcome__intro">
+      A growing collection of reusable React components created to make
+      interfaces more consistent, expressive, and pleasant to build.
+    </p>
+    <div className="cubos-welcome__actions">
+      <a className="cubos-welcome__primary-action" href="?path=/docs/components-actions-button--docs">
+        <span>Explore components</span>
+      </a>
+      <a className="cubos-welcome__secondary-action" href="#getting-started">
+        Get started
+      </a>
     </div>
-    <div className="sb-section-item">
-      <img
-        src={Context}
-        alt="An abstraction representing the composition of data for a component"
-      />
-      <h4 className="sb-section-item-heading">Provide context and mocking</h4>
-      <p className="sb-section-item-paragraph">Often when a story doesn't render, it's because your component is expecting a specific environment or context (like a theme provider) to be available.</p>
-      <a
-        className="sb-action-link"
-        href="https://storybook.js.org/docs/writing-stories/decorators/?renderer=react&ref=configure#context-for-mocking"
-        target="_blank"
-      >Learn more<RightArrow /></a>
+    <div className="cubos-welcome__meta" aria-label="Library highlights">
+      <span>React</span>
+      <span>TypeScript</span>
+      <span>Accessible foundations</span>
     </div>
-    <div className="sb-section-item">
-      <img src={Assets} alt="A representation of typography and image assets" />
-      <div>
-        <h4 className="sb-section-item-heading">Load assets and resources</h4>
-        <p className="sb-section-item-paragraph">To link static files (like fonts) to your projects and stories, use the
-        `staticDirs` configuration option to specify folders to load when
-        starting Storybook.</p>
-        <a
-          className="sb-action-link"
-          href="https://storybook.js.org/docs/configure/images-and-assets/?renderer=react&ref=configure"
-          target="_blank"
-        >Learn more<RightArrow /></a>
+  </header>
+
+  <section className="cubos-welcome__section" id="getting-started">
+    <div className="cubos-welcome__section-heading">
+      <p>Start building</p>
+      <h2>Up and running in minutes</h2>
+      <span>Install the package, import a component, and make it yours.</span>
+    </div>
+
+    <div className="cubos-welcome__code-grid">
+      <div className="cubos-welcome__code-block">
+        <div className="cubos-welcome__code-label">
+          <span>01</span>
+          Install
+        </div>
+        <pre><code>{`bun add @manosarno/cubos-design-system-lib`}</code></pre>
       </div>
-    </div>
-  </div>
+
+      <div className="cubos-welcome__code-block">
+        <div className="cubos-welcome__code-label">
+          <span>02</span>
+          Import
+        </div>
+        <pre><code>{`import { Button } from
+
+"@manosarno/cubos-design-system-lib";`}</code></pre>
+
 </div>
-<div className="sb-container">
-  <div className='sb-section-title'>
-    # Do more with Storybook
-
-    Now that you know the basics, let's explore other parts of Storybook that will improve your experience. This list is just to get you started. You can customise Storybook in many ways to fit your needs.
-  </div>
-
-  <div className="sb-section">
-    <div className="sb-features-grid">
-      <div className="sb-grid-item">
-        <img src={Docs} alt="A screenshot showing the autodocs tag being set, pointing a docs page being generated" />
-        <h4 className="sb-section-item-heading">Autodocs</h4>
-        <p className="sb-section-item-paragraph">Auto-generate living,
-          interactive reference documentation from your components and stories.</p>
-        <a
-          className="sb-action-link"
-          href="https://storybook.js.org/docs/writing-docs/autodocs/?renderer=react&ref=configure"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-      <div className="sb-grid-item">
-        <img src={Share} alt="A browser window showing a Storybook being published to a chromatic.com URL" />
-        <h4 className="sb-section-item-heading">Publish to Chromatic</h4>
-        <p className="sb-section-item-paragraph">Publish your Storybook to review and collaborate with your entire team.</p>
-        <a
-          className="sb-action-link"
-          href="https://storybook.js.org/docs/sharing/publish-storybook/?renderer=react&ref=configure#publish-storybook-with-chromatic"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-      <div className="sb-grid-item">
-        <img src={FigmaPlugin} alt="Windows showing the Storybook plugin in Figma" />
-        <h4 className="sb-section-item-heading">Figma Plugin</h4>
-        <p className="sb-section-item-paragraph">Embed your stories into Figma to cross-reference the design and live
-          implementation in one place.</p>
-        <a
-          className="sb-action-link"
-          href="https://storybook.js.org/docs/sharing/design-integrations/?renderer=react&ref=configure#embed-storybook-in-figma-with-the-plugin"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-      <div className="sb-grid-item">
-        <img src={Testing} alt="Screenshot of tests passing and failing" />
-        <h4 className="sb-section-item-heading">Testing</h4>
-        <p className="sb-section-item-paragraph">Use stories to test a component in all its variations, no matter how
-          complex.</p>
-        <a
-          className="sb-action-link"
-          href="https://storybook.js.org/docs/writing-tests/?renderer=react&ref=configure"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-      <div className="sb-grid-item">
-        <img src={Accessibility} alt="Screenshot of accessibility tests passing and failing" />
-        <h4 className="sb-section-item-heading">Accessibility</h4>
-        <p className="sb-section-item-paragraph">Automatically test your components for a11y issues as you develop.</p>
-        <a
-          className="sb-action-link"
-          href="https://storybook.js.org/docs/writing-tests/accessibility-testing/?renderer=react&ref=configure"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-      <div className="sb-grid-item">
-        <img src={Theming} alt="Screenshot of Storybook in light and dark mode" />
-        <h4 className="sb-section-item-heading">Theming</h4>
-        <p className="sb-section-item-paragraph">Theme Storybook's UI to personalize it to your project.</p>
-        <a
-          className="sb-action-link"
-          href="https://storybook.js.org/docs/configure/theming/?renderer=react&ref=configure"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-    </div>
-  </div>
-</div>
-<div className='sb-addon'>
-  <div className='sb-addon-text'>
-    <h4>Addons</h4>
-    <p className="sb-section-item-paragraph">Integrate your tools with Storybook to connect workflows.</p>
-    <a
-        className="sb-action-link"
-        href="https://storybook.js.org/addons/?ref=configure"
-        target="_blank"
-      >Discover all addons<RightArrow /></a>
-  </div>
-  <div className='sb-addon-img'>
-    <img src={AddonLibrary} alt="Integrate your tools with Storybook to connect workflows." />
-  </div>
 </div>
 
-<div className="sb-section sb-socials">
-    <div className="sb-section-item">
-      <img src={Github} alt="Github logo" className="sb-explore-image"/>
-      Join our contributors building the future of UI development.
+  </section>
 
-      <a
-        className="sb-action-link"
-        href="https://github.com/storybookjs/storybook"
-        target="_blank"
-      >Star on GitHub<RightArrow /></a>
+  <section className="cubos-welcome__principles">
+    <div className="cubos-welcome__section-heading cubos-welcome__section-heading--light">
+      <p>Our approach</p>
+      <h2>Designed to feel dependable</h2>
     </div>
-    <div className="sb-section-item">
-      <img src={Discord} alt="Discord logo" className="sb-explore-image"/>
-      <div>
-        Get support and chat with frontend developers.
 
-        <a
-          className="sb-action-link"
-          href="https://discord.gg/storybook"
-          target="_blank"
-        >Join Discord server<RightArrow /></a>
-      </div>
+    <div className="cubos-welcome__principles-grid">
+      <article>
+        <span>01</span>
+        <h3>Consistent</h3>
+        <p>Shared patterns create familiar experiences across every product.</p>
+      </article>
+      <article>
+        <span>02</span>
+        <h3>Composable</h3>
+        <p>Focused APIs make components easy to combine and adapt.</p>
+      </article>
+      <article>
+        <span>03</span>
+        <h3>Typed</h3>
+        <p>TypeScript support brings useful guidance directly into your editor.</p>
+      </article>
     </div>
-    <div className="sb-section-item">
-      <img src={Youtube} alt="Youtube logo" className="sb-explore-image"/>
-      <div>
-        Watch tutorials, feature previews and interviews.
 
-        <a
-          className="sb-action-link"
-          href="https://www.youtube.com/@chromaticui"
-          target="_blank"
-        >Watch on YouTube<RightArrow /></a>
-      </div>
+  </section>
+
+  <section className="cubos-welcome__section cubos-welcome__browse">
+    <div className="cubos-welcome__section-heading">
+      <p>Browse the library</p>
+      <h2>Find the right building block</h2>
+      <span>Explore components by the role they play in an interface.</span>
     </div>
-    <div className="sb-section-item">
-      <img src={Tutorials} alt="A book" className="sb-explore-image"/>
-      <p>Follow guided walkthroughs on for key workflows.</p>
 
-      <a
-          className="sb-action-link"
-          href="https://storybook.js.org/tutorials/?ref=configure"
-          target="_blank"
-        >Discover tutorials<RightArrow /></a>
-    </div>
-</div>
+    <nav className="cubos-welcome__category-list" aria-label="Component categories">
+      <a href="?path=/docs/components-actions-button--docs">
+        <span className="cubos-welcome__category-index">01</span>
+        <span><strong>Actions</strong><small>Commands and user decisions</small></span>
+        <b aria-hidden="true">&#8594;</b>
+      </a>
+      <a href="?path=/docs/components-forms-input--docs">
+        <span className="cubos-welcome__category-index">02</span>
+        <span><strong>Forms</strong><small>Data entry and interaction</small></span>
+        <b aria-hidden="true">&#8594;</b>
+      </a>
+      <a href="?path=/docs/components-feedback-confirmdialog--docs">
+        <span className="cubos-welcome__category-index">03</span>
+        <span><strong>Feedback</strong><small>Status, confirmation, and guidance</small></span>
+        <b aria-hidden="true">&#8594;</b>
+      </a>
+      <a href="?path=/docs/components-data-display-chip--docs">
+        <span className="cubos-welcome__category-index">04</span>
+        <span><strong>Data display</strong><small>Compact and scannable information</small></span>
+        <b aria-hidden="true">&#8594;</b>
+      </a>
+    </nav>
 
-<style>
-  {`
-  .sb-container {
-    margin-bottom: 48px;
+  </section>
+
+  <footer className="cubos-welcome__footer">
+    <div className="cubos-welcome__mark cubos-welcome__mark--small" aria-hidden="true">C</div>
+    <p><strong>Cubos Design System</strong><span>Built with care for better product experiences.</span></p>
+  </footer>
+</main>
+
+<style>{`
+  .sbdocs.sbdocs-wrapper {
+    padding: 0;
+    background: #f7f8fa;
   }
 
-  .sb-section {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+  .sbdocs .sbdocs-content {
+    max-width: none;
   }
 
-  img {
-    object-fit: cover;
+  .cubos-welcome {
+    --welcome-ink: #17202a;
+    --welcome-muted: #66727f;
+    --welcome-orange: #fa7436;
+    --welcome-green: #16856b;
+    color: var(--welcome-ink);
+    background: #ffffff;
+    font-family: "Inter", sans-serif;
+    overflow: hidden;
   }
 
-  .sb-section-title {
-    margin-bottom: 32px;
+  .cubos-welcome * {
+    box-sizing: border-box;
   }
 
-  .sb-section a:not(h1 a, h2 a, h3 a) {
-    font-size: 14px;
+  .cubos-welcome__hero {
+    min-height: 610px;
+    padding: 76px clamp(28px, 8vw, 112px) 54px;
+    position: relative;
+    background-color: #fff8f4;
+    border-bottom: 1px solid #eadfd9;
   }
 
-  .sb-section-item, .sb-grid-item {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+  .cubos-welcome__hero::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    top: 0;
+    bottom: 0;
+    right: clamp(28px, 8vw, 112px);
+    background: var(--welcome-orange);
   }
 
-  .sb-section-item-heading {
-    padding-top: 20px !important;
-    padding-bottom: 5px !important;
-    margin: 0 !important;
+  .cubos-welcome__mark {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    color: #ffffff;
+    background: var(--welcome-ink);
+    border-radius: 6px;
+    font-size: 27px;
+    font-weight: 800;
   }
-  .sb-section-item-paragraph {
+
+  .cubos-welcome__eyebrow {
+    margin: 52px 0 12px;
+    color: var(--welcome-orange);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .cubos-welcome__hero h1 {
+    max-width: 780px;
     margin: 0;
-    padding-bottom: 10px;
+    color: var(--welcome-ink);
+    font-size: 76px;
+    font-weight: 800;
+    line-height: 0.98;
+    letter-spacing: 0;
   }
 
-  .sb-action-link {
+  .cubos-welcome__intro {
+    max-width: 650px;
+    margin: 28px 0 0;
+    color: #4c5863;
+    font-size: 20px;
+    line-height: 1.65;
+  }
+
+  .cubos-welcome__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .cubos-welcome__actions a {
+    min-height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 700;
     text-decoration: none;
   }
 
-  .sb-action-link:hover, .sb-action-link:focus {
-    text-decoration: underline;
-    text-decoration-thickness: 0.03125rem;
-    text-underline-offset: 0.11em;
+  .cubos-welcome a.cubos-welcome__primary-action,
+  .cubos-welcome a.cubos-welcome__primary-action:hover,
+  .cubos-welcome a.cubos-welcome__primary-action:focus,
+  .cubos-welcome a.cubos-welcome__primary-action:visited,
+  .cubos-welcome a.cubos-welcome__primary-action span {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
   }
 
-  .sb-chevron {
-    margin-left: 5px;
+  .cubos-welcome a.cubos-welcome__primary-action {
+    background: var(--welcome-orange);
+    border: 1px solid var(--welcome-orange);
   }
 
-  .sb-features-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 32px 20px;
+  .cubos-welcome__secondary-action {
+    color: var(--welcome-ink) !important;
+    background: #ffffff;
+    border: 1px solid #cdd3d8;
   }
 
-  .sb-socials {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .sb-socials p {
-    margin-bottom: 10px;
-  }
-
-  .sb-explore-image {
-    max-height: 32px;
-    align-self: flex-start;
-  }
-
-  .sb-addon {
-    width: 100%;
+  .cubos-welcome__meta {
     display: flex;
     align-items: center;
-    position: relative;
-    background-color: #EEF3F8;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    background: #EEF3F8;
-    height: 180px;
-    margin-bottom: 48px;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-top: 44px;
+    color: #46515b;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .cubos-welcome__meta span::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    display: inline-block;
+    margin: 0 8px 2px 0;
+    background: var(--welcome-green);
+    border-radius: 50%;
+  }
+
+  .cubos-welcome__section {
+    padding: 88px clamp(28px, 8vw, 112px);
+  }
+
+  .cubos-welcome__section-heading {
+    max-width: 650px;
+  }
+
+  .cubos-welcome__section-heading > p {
+    margin: 0 0 10px;
+    color: var(--welcome-orange);
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .cubos-welcome__section-heading h2 {
+    margin: 0;
+    color: var(--welcome-ink);
+    font-size: 36px;
+    line-height: 1.2;
+    letter-spacing: 0;
+  }
+
+  .cubos-welcome__section-heading > span {
+    display: block;
+    margin-top: 14px;
+    color: var(--welcome-muted);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .cubos-welcome__code-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 38px;
+  }
+
+  .cubos-welcome__code-block {
+    min-width: 0;
+    border: 1px solid #d9dee3;
+    border-radius: 6px;
     overflow: hidden;
   }
 
-  .sb-addon-text {
-    padding-left: 48px;
-    max-width: 240px;
+  .cubos-welcome__code-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 16px;
+    color: #4d5964;
+    background: #f3f5f6;
+    border-bottom: 1px solid #d9dee3;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
   }
 
-  .sb-addon-text h4 {
-    padding-top: 0px;
+  .cubos-welcome__code-label span {
+    color: var(--welcome-orange);
   }
 
-  .sb-addon-img {
-    position: absolute;
-    left: 345px;
-    top: 0;
-    height: 100%;
-    width: 200%;
-    overflow: hidden;
+  .sbdocs .cubos-welcome .cubos-welcome__code-block pre {
+    min-height: 96px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+    background: var(--welcome-ink) !important;
+    border: 0;
+    border-radius: 0;
+    overflow-x: auto;
   }
 
-  .sb-addon-img img {
-    width: 650px;
-    transform: rotate(-15deg);
-    margin-left: 40px;
-    margin-top: -72px;
-    box-shadow: 0 0 1px rgba(255, 255, 255, 0);
-    backface-visibility: hidden;
+  .sbdocs .cubos-welcome .cubos-welcome__code-block code {
+    color: #f8fafb !important;
+    background: transparent !important;
+    font-size: 13px;
+    line-height: 1.6;
   }
 
-  @media screen and (max-width: 800px) {
-    .sb-addon-img {
-      left: 300px;
-    }
+  .cubos-welcome__principles {
+    padding: 82px clamp(28px, 8vw, 112px);
+    color: #ffffff;
+    background: var(--welcome-ink);
   }
 
-  @media screen and (max-width: 600px) {
-    .sb-section {
-      flex-direction: column;
+  .cubos-welcome__section-heading--light h2 {
+    color: #ffffff;
+  }
+
+  .cubos-welcome__principles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    margin-top: 42px;
+    background: #39424b;
+    border: 1px solid #39424b;
+  }
+
+  .cubos-welcome__principles-grid article {
+    min-height: 220px;
+    padding: 28px;
+    background: var(--welcome-ink);
+  }
+
+  .cubos-welcome__principles-grid article > span {
+    color: #65c6aa;
+    font-size: 12px;
+    font-weight: 800;
+  }
+
+  .cubos-welcome__principles-grid h3 {
+    margin: 54px 0 10px;
+    color: #ffffff;
+    font-size: 21px;
+    letter-spacing: 0;
+  }
+
+  .cubos-welcome__principles-grid p {
+    margin: 0;
+    color: #b9c1c8;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .cubos-welcome__browse {
+    background: #f7f8fa;
+  }
+
+  .cubos-welcome__category-list {
+    margin-top: 38px;
+    border-top: 1px solid #ccd3d9;
+  }
+
+  .cubos-welcome__category-list a {
+    display: grid;
+    grid-template-columns: 52px 1fr 32px;
+    align-items: center;
+    gap: 18px;
+    min-height: 92px;
+    padding: 14px 4px;
+    color: var(--welcome-ink) !important;
+    border-bottom: 1px solid #ccd3d9;
+    text-decoration: none;
+    transition: padding 160ms ease, background 160ms ease;
+  }
+
+  .cubos-welcome__category-list a:hover {
+    padding-right: 16px;
+    padding-left: 16px;
+    background: #ffffff;
+  }
+
+  .cubos-welcome__category-index {
+    color: var(--welcome-orange);
+    font-size: 12px;
+    font-weight: 800;
+  }
+
+  .cubos-welcome__category-list a > span:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .cubos-welcome__category-list strong {
+    font-size: 17px;
+  }
+
+  .cubos-welcome__category-list small {
+    color: var(--welcome-muted);
+    font-size: 13px;
+  }
+
+  .cubos-welcome__category-list b {
+    color: var(--welcome-green);
+    font-size: 22px;
+    font-weight: 400;
+  }
+
+  .cubos-welcome__footer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 34px clamp(28px, 8vw, 112px);
+    background: #ffffff;
+    border-top: 1px solid #e1e5e8;
+  }
+
+  .cubos-welcome__mark--small {
+    width: 38px;
+    height: 38px;
+    font-size: 19px;
+  }
+
+  .cubos-welcome__footer p {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin: 0;
+  }
+
+  .cubos-welcome__footer strong {
+    color: var(--welcome-ink);
+    font-size: 13px;
+  }
+
+  .cubos-welcome__footer span {
+    color: var(--welcome-muted);
+    font-size: 12px;
+  }
+
+  @media (max-width: 760px) {
+    .cubos-welcome__hero {
+      min-height: 570px;
+      padding-top: 42px;
     }
 
-    .sb-features-grid {
-      grid-template-columns: repeat(1, 1fr);
+    .cubos-welcome__hero::after {
+      width: 7px;
+      right: 18px;
     }
 
-    .sb-socials {
-      grid-template-columns: repeat(2, 1fr);
+    .cubos-welcome__hero h1 {
+      font-size: 48px;
     }
 
-    .sb-addon {
-      height: 280px;
-      align-items: flex-start;
-      padding-top: 32px;
-      overflow: hidden;
+    .cubos-welcome__intro {
+      font-size: 17px;
     }
 
-    .sb-addon-text {
-      padding-left: 24px;
+    .cubos-welcome__code-grid,
+    .cubos-welcome__principles-grid {
+      grid-template-columns: 1fr;
     }
 
-    .sb-addon-img {
-      right: 0;
-      left: 0;
-      top: 130px;
-      bottom: 0;
-      overflow: hidden;
-      height: auto;
-      width: 124%;
+    .cubos-welcome__section,
+    .cubos-welcome__principles {
+      padding-top: 64px;
+      padding-bottom: 64px;
     }
 
-    .sb-addon-img img {
-      width: 1200px;
-      transform: rotate(-12deg);
-      margin-left: 0;
-      margin-top: 48px;
-      margin-bottom: -40px;
-      margin-left: -24px;
+    .cubos-welcome__section-heading h2 {
+      font-size: 30px;
+    }
+
+    .cubos-welcome__principles-grid article {
+      min-height: 180px;
+    }
+
+    .cubos-welcome__principles-grid h3 {
+      margin-top: 34px;
+    }
+
+    .cubos-welcome__category-list a {
+      grid-template-columns: 34px 1fr 24px;
+      gap: 10px;
     }
   }
-  `}
-</style>
+`}</style>
