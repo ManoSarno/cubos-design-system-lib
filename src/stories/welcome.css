@@ -1,9 +1,9 @@
-.sbdocs.sbdocs-wrapper {
+.sbdocs.sbdocs-wrapper:has(.cubos-welcome) {
   padding: 0;
   background: #f7f8fa;
 }
 
-.sbdocs .sbdocs-content {
+.sbdocs .sbdocs-content:has(.cubos-welcome) {
   max-width: none;
 }
 
