@@ -12,6 +12,10 @@ const meta = {
   parameters: {
     layout: "fullscreen",
     docs: {
+      description: {
+        component:
+          "A composable dialog overlay. Supply headings, text, forms, and actions through children.",
+      },
       story: {
         height: "500px",
         inline: false,

@@ -32,11 +32,18 @@ need to adapt the theme:
   --cubos-color-primary: #fa7436;
   --cubos-color-text: #282a2f;
   --cubos-color-surface: #ffffff;
+  --cubos-button-primary-background: #fa7436;
+  --cubos-button-primary-color: #ffffff;
+  --cubos-button-secondary-background: #ffffff;
+  --cubos-button-secondary-color: #282a2f;
+  --cubos-button-outline-color: #fa7436;
   --cubos-radius-medium: 8px;
 }
 ```
 
-You may override these values to match your product theme.
+Button variants describe visual hierarchy rather than a fixed color. Override
+the button tokens to match your product theme without changing component
+markup.
 
 ## Basic Usage
 
@@ -53,7 +60,12 @@ import {
 export function SearchForm() {
   return (
     <form>
-      <Input labelId="search" labelText="Search" placeholder="Search by name" width={320} />
+      <Input
+        labelId="search"
+        labelText="Search"
+        placeholder="Search by name"
+        width={320}
+      />
 
       <Button variant="primary" shape="normal" width={160}>
         Search
@@ -67,13 +79,18 @@ export function SearchForm() {
 
 ### Button
 
-Buttons support normal and rounded shapes with solid, neutral, and outlined
-color styles.
+Buttons use semantic variants for visual hierarchy and a separate prop for
+shape. Their colors are controlled by theme tokens.
 
 ```tsx
 import { Button } from "@manosarno/cubos-design-system-lib";
 
-<Button variant="outline" shape="rounded" width={200} onClick={() => console.log("Clicked")}>
+<Button
+  variant="outline"
+  shape="rounded"
+  width={200}
+  onClick={() => console.log("Clicked")}
+>
   Continue
 </Button>;
 ```
@@ -82,7 +99,7 @@ import { Button } from "@manosarno/cubos-design-system-lib";
 | ---------- | --------------------------------------- | -------- | ---------- | ---------------------------- |
 | `variant`  | `"primary" \| "secondary" \| "outline"` | Yes      | -          | Controls the semantic style. |
 | `shape`    | `"normal" \| "rounded"`                 | No       | `"normal"` | Controls the button shape.   |
-| `width`    | `number`                                | Yes      | -          | Button width in pixels.      |
+| `width`    | `number`                                | No       | `100%`     | Button width in pixels.      |
 | `height`   | `number`                                | No       | `60`       | Button height in pixels.     |
 | `children` | `ReactNode`                             | No       | `"Click"`  | Button content.              |
 
@@ -110,7 +127,7 @@ import { Input } from "@manosarno/cubos-design-system-lib";
 
 | Prop              | Type                | Required | Default  | Description                           |
 | ----------------- | ------------------- | -------- | -------- | ------------------------------------- |
-| `width`           | `number`            | Yes      | -        | Input width in pixels.                |
+| `width`           | `number`            | No       | `100%`   | Input width in pixels.                |
 | `height`          | `number`            | No       | `60`     | Input height in pixels.               |
 | `labelText`       | `string`            | No       | -        | Text displayed above the input.       |
 | `labelId`         | `string`            | No       | -        | Connects the label to the input `id`. |
@@ -129,7 +146,13 @@ Use chips to display compact statuses, categories, or labels.
 ```tsx
 import { Chip } from "@manosarno/cubos-design-system-lib";
 
-<Chip title="Active" type="filled" width={120} color="#fa7436" textColor="#ffffff" />;
+<Chip
+  title="Active"
+  type="filled"
+  width={120}
+  color="#fa7436"
+  textColor="#ffffff"
+/>;
 ```
 
 | Prop        | Type                     | Required | Default      | Description                                                                    |
@@ -142,7 +165,8 @@ import { Chip } from "@manosarno/cubos-design-system-lib";
 
 ### Modal
 
-The modal accepts custom content and provides cancel and confirmation actions.
+The modal is a composable overlay. Add headings, text, forms, and actions
+through `children`, so the content and behavior stay under your control.
 
 ```tsx
 import { useState } from "react";
@@ -153,7 +177,12 @@ export function ModalExample() {
 
   return (
     <>
-      <Button variant="primary" shape="normal" width={180} onClick={() => setOpen(true)}>
+      <Button
+        variant="primary"
+        shape="normal"
+        width={180}
+        onClick={() => setOpen(true)}
+      >
         Open modal
       </Button>
 
@@ -161,28 +190,58 @@ export function ModalExample() {
         open={open}
         width={480}
         height={320}
-        btnConfirmText="Confirm"
-        btnCancelText="Cancel"
-        handleConfirm={() => setOpen(false)}
-        handleCancel={() => setOpen(false)}
+        aria-labelledby="profile-modal-title"
+        aria-describedby="profile-modal-description"
       >
-        <h2>Review your changes</h2>
+        <div
+          style={{
+            display: "flex",
+            minHeight: "100%",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            gap: 24,
+          }}
+        >
+          <div>
+            <h2 id="profile-modal-title">Save your changes?</h2>
+            <p id="profile-modal-description">
+              Your profile information will be updated immediately.
+            </p>
+          </div>
+
+          <div style={{ display: "flex", gap: 12 }}>
+            <Button
+              variant="outline"
+              height={48}
+              onClick={() => setOpen(false)}
+            >
+              Cancel
+            </Button>
+            <Button
+              variant="primary"
+              height={48}
+              onClick={() => setOpen(false)}
+            >
+              Save changes
+            </Button>
+          </div>
+        </div>
       </Modal>
     </>
   );
 }
 ```
 
-| Prop             | Type         | Required | Description                                     |
-| ---------------- | ------------ | -------- | ----------------------------------------------- |
-| `open`           | `boolean`    | Yes      | Controls whether the modal is rendered.         |
-| `width`          | `number`     | Yes      | Modal width in pixels.                          |
-| `height`         | `number`     | Yes      | Modal height in pixels.                         |
-| `btnConfirmText` | `string`     | Yes      | Confirmation button label.                      |
-| `btnCancelText`  | `string`     | Yes      | Cancel button label.                            |
-| `handleConfirm`  | `() => void` | Yes      | Called when the confirmation button is clicked. |
-| `handleCancel`   | `() => void` | Yes      | Called when the cancel button is clicked.       |
-| `children`       | `ReactNode`  | No       | Custom modal content.                           |
+| Prop       | Type        | Required | Description                             |
+| ---------- | ----------- | -------- | --------------------------------------- |
+| `open`     | `boolean`   | Yes      | Controls whether the modal is rendered. |
+| `width`    | `number`    | Yes      | Modal width in pixels.                  |
+| `height`   | `number`    | Yes      | Modal height in pixels.                 |
+| `children` | `ReactNode` | No       | Custom modal content and actions.       |
+
+The modal also accepts standard `div` attributes. Use `aria-labelledby` and
+`aria-describedby` to associate its heading and supporting text with the
+dialog.
 
 ### ConfirmDialog
 
@@ -267,6 +326,22 @@ import type {
 
 The package also exports `ArrowBackIcon`, `CautionIcon`, and `SuccessIcon`
 alongside their prop types for custom compositions.
+
+## Custom Classes
+
+Components accept native HTML attributes for their underlying element. A
+custom `className` is merged with the library's internal classes, so adding one
+does not remove the component styling:
+
+```tsx
+<Button className="checkout-action" variant="primary">
+  Checkout
+</Button>
+```
+
+For `Input`, `className` and `style` are applied to the native input control.
+For `Modal`, `ConfirmDialog`, and `NotificationDialog`, they are applied to the
+outer overlay.
 
 ## Local Development
 

@@ -10,6 +10,10 @@ const meta = {
   parameters: {
     layout: "fullscreen",
     docs: {
+      description: {
+        component:
+          "A confirmation overlay for important decisions, with success and error feedback states.",
+      },
       story: {
         height: "720px",
         inline: false,

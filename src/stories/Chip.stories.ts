@@ -7,6 +7,12 @@ const meta = {
   component: Chip,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component:
+          "A compact label for statuses and categories, available in filled and outlined variants.",
+      },
+    },
   },
   tags: ["autodocs"],
   argTypes: {

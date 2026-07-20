@@ -10,6 +10,10 @@ const meta = {
   parameters: {
     layout: "fullscreen",
     docs: {
+      description: {
+        component:
+          "A feedback overlay for success and error messages with an optional follow-up action.",
+      },
       story: {
         height: "750px",
         inline: false,

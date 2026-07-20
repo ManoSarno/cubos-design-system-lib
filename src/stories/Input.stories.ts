@@ -12,6 +12,12 @@ const meta = {
   component: Input,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component:
+          "A labeled input with optional leading or trailing icon. When handleClickIcon is provided, the icon becomes an interactive button.",
+      },
+    },
   },
   tags: ["autodocs"],
   argTypes: {

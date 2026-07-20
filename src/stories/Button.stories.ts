@@ -9,16 +9,24 @@ const meta = {
   component: Button,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component:
+          "A semantic action component whose colors can be customized with CSS tokens. Use variant for hierarchy and shape for geometry.",
+      },
+    },
   },
   tags: ["autodocs"],
   argTypes: {
     variant: {
       control: "select",
       options: ["primary", "secondary", "outline"],
+      description: "Controls the semantic visual hierarchy.",
     },
     shape: {
       control: "radio",
       options: ["normal", "rounded"],
+      description: "Controls the button corner shape.",
     },
   },
   args: {

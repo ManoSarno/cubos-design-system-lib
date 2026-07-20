@@ -40,10 +40,12 @@ import "./welcome.css";
         <pre><code>{`bun add @manosarno/cubos-design-system-lib`}</code></pre>
       </div>
       <div className="cubos-welcome__code-block">
-        <p><span>02</span> Import</p>
-        <pre><code>{`import { Button } from
+        <p><span>02</span> Use</p>
+        <pre><code>{`import { Button } from "@manosarno/cubos-design-system-lib";
 
-"@manosarno/cubos-design-system-lib";`}</code></pre>
+<Button variant="primary">
+  Continue
+</Button>`}</code></pre>
 
 </div>
 </div>
@@ -69,7 +71,9 @@ import "./welcome.css";
     <article>
       <span>03</span>
       <h3>Typed</h3>
-      <p>TypeScript support brings useful guidance directly into your editor.</p>
+      <p>
+        TypeScript support brings useful guidance directly into your editor.
+      </p>
     </article>
   </div>
 </section>
@@ -80,7 +84,10 @@ import "./welcome.css";
     <h2>Find the right building block</h2>
     <span>Explore components by the role they play in an interface.</span>
   </div>
-  <nav className="cubos-welcome__category-list" aria-label="Component categories">
+  <nav
+    className="cubos-welcome__category-list"
+    aria-label="Component categories"
+  >
     <a href="?path=/docs/components-actions-button--docs">
       <b>01</b>
       <span>
