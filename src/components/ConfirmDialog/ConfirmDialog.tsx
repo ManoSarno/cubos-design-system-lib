@@ -42,7 +42,7 @@ function ConfirmDialog({
                 onClick={handleCancel}
                 width={140}
               >
-                Cancel
+                {btnCancelText}
               </Button>
               <Button
                 variant="normal"
@@ -50,7 +50,7 @@ function ConfirmDialog({
                 onClick={handleConfirm}
                 width={190}
               >
-                Confirm
+                {btnConfirmText}
               </Button>
             </div>
           </div>

@@ -9,6 +9,7 @@ export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   icon?: string;
   iconPosition?: "left" | "right";
   iconSize?: number;
+  handleClickIcon?: () => void;
 };
 
 function Input({
@@ -18,11 +19,11 @@ function Input({
   height,
   icon,
   iconPosition = "left",
-  iconSize = 32,
+  iconSize = 24,
+  handleClickIcon,
   ...props
 }: InputProps) {
   const inputHeight = height ?? 60;
-  const iconTop = `${(inputHeight - iconSize) / 2}px`;
   const iconSpace = iconSize + 26;
 
   const paddingIcon =
@@ -42,10 +43,9 @@ function Input({
           <img
             src={icon}
             alt="icon"
+            onClick={handleClickIcon}
             style={{
               [iconPosition]: "16px",
-              top: iconTop,
-              height: `${iconSize}px`,
               width: `${iconSize}px`,
             }}
           />

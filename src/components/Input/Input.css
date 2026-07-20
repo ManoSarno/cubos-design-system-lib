@@ -8,6 +8,8 @@
 
 .cubos-input__field {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .cubos-input label {
@@ -23,5 +25,6 @@
 
 .cubos-input img {
   position: absolute;
-  object-fit: contain;
+  height: auto;
+  cursor: pointer;
 }
