@@ -1,119 +1,112 @@
-import React, { StrictMode } from "react";
+import { StrictMode, useState } from "react";
 import { createRoot } from "react-dom/client";
-import {
-  Button,
-  Chip,
-  ConfirmDialog,
-  Input,
-  Modal,
-  NotificationDialog,
-} from "../src";
-import "../src/styles/global.css";
 
-const App = () => {
-  const [open, setOpen] = React.useState(false);
-  const [openConfirm, setOpenConfirm] = React.useState(false);
-  const [openModal, setOpenModal] = React.useState(false);
+import { Button, Chip, ConfirmDialog, Input, Modal, NotificationDialog } from "../src";
+
+function App() {
+  const [activeDialog, setActiveDialog] = useState<
+    "notification" | "confirmation" | "modal" | null
+  >(null);
+
+  const closeDialog = () => setActiveDialog(null);
 
   return (
-    <div
+    <main
       style={{
-        padding: "32px",
-        position: "relative",
-        display: "flex",
-        flexDirection: "column",
-        gap: "16px",
+        display: "grid",
+        gap: 20,
+        maxWidth: 520,
+        margin: "0 auto",
+        padding: 32,
       }}
     >
-      <Chip
-        title="Meu componente Chip"
-        width={300}
-        color="orange"
-        type="outlined"
-      />
+      <h1>Cubos Design System</h1>
+      <Chip title="Interactive example" width={180} color="#fa7436" />
+      <Input labelId="example-name" labelText="Name" width={320} placeholder="Enter your name" />
 
       <Button
-        variant="normal"
-        colors="orange__outline"
-        width={400}
-        onClick={() => setOpen(true)}
+        variant="outline"
+        shape="normal"
+        width={320}
+        onClick={() => setActiveDialog("notification")}
       >
-        Abrir Notification Dialog
+        Open notification
       </Button>
-
       <Button
-        variant="normal"
-        colors="orange"
-        width={400}
-        onClick={() => setOpenConfirm(true)}
+        variant="primary"
+        shape="normal"
+        width={320}
+        onClick={() => setActiveDialog("confirmation")}
       >
-        Abrir Confirm Dialog
+        Open confirmation
       </Button>
-
       <Button
-        variant="normal"
-        colors="white"
-        width={400}
-        onClick={() => setOpenModal(true)}
+        variant="secondary"
+        shape="normal"
+        width={320}
+        onClick={() => setActiveDialog("modal")}
       >
-        Abrir Modal
+        Open modal
       </Button>
-
-      <Input
-        labelId="input-name"
-        labelText="Name"
-        width={300}
-        height={80}
-        icon="https://cdn3.iconfinder.com/data/icons/feather-5/24/settings-512.png"
-        iconPosition="left"
-        placeholder="Digite seu nome"
-      />
 
       <NotificationDialog
-        open={open}
+        open={activeDialog === "notification"}
         type="success"
-        title="Meu título!"
-        description="minha descrição do dialog é essa daqui."
-        actionText="Fechar"
-        handleClose={() => setOpen(false)}
+        title="Changes saved"
+        description="Your information was updated successfully."
+        actionText="Close"
+        handleClose={closeDialog}
       />
 
       <ConfirmDialog
-        open={openConfirm}
+        open={activeDialog === "confirmation"}
         type="error"
-        title="Meu título!"
-        description="minha descrição para o confirm dialog."
-        btnConfirmText="Confirmar"
-        btnCancelText="Cancelar"
-        handleConfirm={() => setOpenConfirm(false)}
-        handleCancel={() => setOpenConfirm(false)}
+        title="Confirm action"
+        description="Are you sure you want to continue?"
+        btnConfirmText="Confirm"
+        btnCancelText="Cancel"
+        handleConfirm={closeDialog}
+        handleCancel={closeDialog}
       />
 
       <Modal
-        open={openModal}
-        width={450}
-        height={600}
-        btnConfirmText="Confirmar"
-        btnCancelText="Cancelar"
-        handleConfirm={() => setOpenModal(false)}
-        handleCancel={() => setOpenModal(false)}
+        open={activeDialog === "modal"}
+        width={480}
+        height={320}
+        aria-labelledby="example-modal-title"
+        aria-describedby="example-modal-description"
       >
-        <h1>Meu Modal</h1>
-        <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
-          <h2>Meu sub título</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed cumque
-            nulla exercitationem rerum eius in optio laborum, aut excepturi
-            temporibus quam perferendis! Omnis tenetur incidunt aliquam
-            voluptates vel delectus harum!
-          </p>
+        <div
+          style={{
+            display: "flex",
+            minHeight: "100%",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            gap: 24,
+          }}
+        >
+          <div>
+            <h2 id="example-modal-title">Save your changes?</h2>
+            <p id="example-modal-description">
+              Your profile information will be updated immediately.
+            </p>
+          </div>
+          <div style={{ display: "flex", gap: 12 }}>
+            <Button variant="outline" height={48} onClick={closeDialog}>
+              Cancel
+            </Button>
+            <Button variant="primary" height={48} onClick={closeDialog}>
+              Save changes
+            </Button>
+          </div>
         </div>
       </Modal>
-    </div>
+    </main>
   );
-};
+}
 
 const root = document.getElementById("root");
+
 if (root) {
   createRoot(root).render(
     <StrictMode>

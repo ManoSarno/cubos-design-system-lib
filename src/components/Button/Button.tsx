@@ -1,30 +1,40 @@
-import { HTMLAttributes } from "react";
+import type { ButtonHTMLAttributes } from "react";
+
+import { classNames } from "../../utils/classNames";
 import "./Button.css";
 
-export type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
-  variant: "normal" | "rounded";
-  colors: "orange" | "white" | "orange__outline";
-  width: number;
+export type ButtonVariant = "primary" | "secondary" | "outline";
+export type ButtonShape = "normal" | "rounded";
+
+export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  variant: ButtonVariant;
+  shape?: ButtonShape;
+  width?: number;
   height?: number;
 };
 
 function Button({
   variant,
-  colors,
+  shape = "normal",
   width,
   height = 60,
   children,
+  className,
+  style,
   ...props
 }: ButtonProps) {
-  const className = `cubos-button cubos-button--${variant} cubos-button--${colors}`;
-
   return (
     <button
-      style={{ width: `${width}px`, height: `${height}px` }}
-      className={className}
       {...props}
+      className={classNames(
+        "cubos-button",
+        `cubos-button--${variant}`,
+        `cubos-button--${shape}`,
+        className,
+      )}
+      style={{ width: width ?? "100%", height, ...style }}
     >
-      {children || "Click"}
+      {children ?? "Click"}
     </button>
   );
 }

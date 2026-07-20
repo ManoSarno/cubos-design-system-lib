@@ -1,9 +1,13 @@
+import { useId } from "react";
+import type { HTMLAttributes, MouseEvent } from "react";
+
 import ArrowBackIcon from "../Icons/ArrowBackIcon";
 import CautionIcon from "../Icons/CautionIcon";
 import SuccessIcon from "../Icons/SuccessIcon";
-import "./NotificationDialog.css";
+import Overlay from "../_shared/Overlay/Overlay";
+import "../_shared/FeedbackDialog/FeedbackDialog.css";
 
-export interface NotificationDialogProps {
+export interface NotificationDialogProps extends HTMLAttributes<HTMLDivElement> {
   open: boolean;
   type: "error" | "success";
   title: string;
@@ -21,37 +25,40 @@ function NotificationDialog({
   actionText,
   handleClose,
   handleNextLocation,
+  className,
   ...props
 }: NotificationDialogProps) {
-  function handleNavigate() {
-    if (handleNextLocation) handleNextLocation();
+  const titleId = useId();
 
+  function handleNavigate(event: MouseEvent<HTMLButtonElement>) {
+    event.preventDefault();
+    if (handleNextLocation) handleNextLocation();
     if (handleClose) handleClose();
   }
 
   return (
-    <>
-      {open && (
-        <div className="cubos-notification-dialog" {...props}>
-          <div className="cubos-notification-dialog__content">
-            <div className="cubos-notification-dialog__icon">
-              {type === "error" ? <CautionIcon /> : <SuccessIcon />}
-            </div>
-            <strong>{title}</strong>
-            <p>{description}</p>
+    <Overlay
+      {...props}
+      open={open}
+      className={className}
+      panelClassName="cubos-feedback-dialog"
+      aria-labelledby={titleId}
+    >
+      <div className="cubos-feedback-dialog__icon">
+        {type === "error" ? <CautionIcon /> : <SuccessIcon />}
+      </div>
+      <strong id={titleId} className="cubos-feedback-dialog__title">
+        {title}
+      </strong>
+      <p className="cubos-feedback-dialog__description">{description}</p>
 
-            {(handleNextLocation || handleClose) && (
-              <div className="cubos-notification-dialog__next-location">
-                <ArrowBackIcon />
-                <a href="#" onClick={handleNavigate}>
-                  {actionText}
-                </a>
-              </div>
-            )}
-          </div>
-        </div>
+      {(handleNextLocation || handleClose) && (
+        <button type="button" className="cubos-feedback-dialog__link" onClick={handleNavigate}>
+          <ArrowBackIcon />
+          {actionText}
+        </button>
       )}
-    </>
+    </Overlay>
   );
 }
 

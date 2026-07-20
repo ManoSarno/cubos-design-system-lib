@@ -1,4 +1,4 @@
-interface SuccessIconProps {
+export interface SuccessIconProps {
   color?: string;
 }
 

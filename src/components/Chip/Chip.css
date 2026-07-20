@@ -1,16 +1,26 @@
 .cubos-chip {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  padding: 4px 24px;
-
-  border-radius: 32px;
-
-  text-align: right;
-  font-family: sans-serif;
-  font-size: 15px;
-  font-style: normal;
+  max-width: 100%;
+  min-height: 32px;
+  padding: 4px 16px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-family: var(--cubos-font-family, "Poppins", sans-serif);
+  font-size: 14px;
   font-weight: 500;
-  line-height: 32px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.cubos-chip--filled {
+  color: #ffffff;
+  background: var(--orange-400, var(--cubos-color-primary, #fa7436));
+}
+
+.cubos-chip--outlined {
+  color: var(--orange-400, var(--cubos-color-primary, #fa7436));
+  background: transparent;
+  border-color: currentColor;
 }

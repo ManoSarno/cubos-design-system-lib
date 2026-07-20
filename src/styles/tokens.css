@@ -1,0 +1,25 @@
+:root {
+  --cubos-font-family: "Poppins", "Inter", sans-serif;
+  --cubos-color-primary: #fa7436;
+  --cubos-color-primary-hover: #e96529;
+  --cubos-color-surface: #ffffff;
+  --cubos-color-input: #f7f7f8;
+  --cubos-color-text: #282a2f;
+  --cubos-color-text-muted: #747b84;
+  --cubos-color-border: #d8dae5;
+  --cubos-color-border-strong: #b7b7b7;
+  --cubos-color-focus: rgba(250, 116, 54, 0.2);
+  --cubos-button-primary-background: var(--cubos-color-primary);
+  --cubos-button-primary-color: #ffffff;
+  --cubos-button-secondary-background: var(--cubos-color-surface);
+  --cubos-button-secondary-color: var(--cubos-color-text);
+  --cubos-button-secondary-border: var(--cubos-color-border-strong);
+  --cubos-button-outline-background: transparent;
+  --cubos-button-outline-color: var(--cubos-color-primary);
+  --cubos-button-outline-border: var(--cubos-button-outline-color);
+  --cubos-radius-small: 5px;
+  --cubos-radius-medium: 8px;
+  --cubos-radius-large: 12px;
+  --cubos-shadow-dialog: 0 18px 48px rgba(16, 24, 64, 0.18);
+  --cubos-z-index-overlay: 1000;
+}

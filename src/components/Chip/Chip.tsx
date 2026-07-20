@@ -1,21 +1,39 @@
+import type { HTMLAttributes } from "react";
+
+import { classNames } from "../../utils/classNames";
 import "./Chip.css";
 
-export interface ChipProps {
+export type ChipVariant = "filled" | "outlined";
+
+export interface ChipProps extends HTMLAttributes<HTMLDivElement> {
   title: string;
   width: number;
   color?: string;
   textColor?: string;
-  type?: "filled" | "outlined";
+  type?: ChipVariant;
 }
 
-function Chip({ title, width, color, textColor, type }: ChipProps) {
-  const style =
+function Chip({
+  title,
+  width,
+  color,
+  textColor,
+  type = "outlined",
+  className,
+  style,
+  ...props
+}: ChipProps) {
+  const variantStyle =
     type === "filled"
       ? { backgroundColor: color, color: textColor }
-      : { color: color, border: `1px solid ${color}` };
+      : { color, borderColor: color };
 
   return (
-    <div className="cubos-chip" style={{ ...style, width: `${width}px` }}>
+    <div
+      {...props}
+      className={classNames("cubos-chip", `cubos-chip--${type}`, className)}
+      style={{ ...variantStyle, width, ...style }}
+    >
       {title}
     </div>
   );

@@ -1,30 +1,61 @@
-.cubos-button--rounded {
-  height: 51px;
-  border-radius: 52px;
+.cubos-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  border: 0;
+  font-family: var(--cubos-font-family, "Poppins", sans-serif);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    opacity 160ms ease,
+    box-shadow 160ms ease;
+}
 
-  line-height: normal;
+.cubos-button:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.cubos-button:focus-visible {
+  outline: 3px solid var(--cubos-color-focus, rgba(250, 116, 54, 0.35));
+  outline-offset: 2px;
+}
+
+.cubos-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.cubos-button--rounded {
+  border-radius: 999px;
 }
 
 .cubos-button--normal {
-  border-radius: 5px;
-  height: 60px;
+  border-radius: var(--cubos-radius-small, 5px);
 }
 
-.cubos-button--orange {
-  background: var(--orange-400);
-  box-shadow: 0 8px 16px 0 rgba(250, 116, 54, 0.16);
-  color: white;
+.cubos-button--primary {
+  color: var(--cubos-button-primary-color, #ffffff);
+  background: var(--cubos-button-primary-background, var(--cubos-color-primary, #fa7436));
+  box-shadow: 0 8px 16px rgba(250, 116, 54, 0.16);
 }
 
-.cubos-button--orange__outline {
-  border: 1px solid var(--orange-400);
-  color: var(--orange-400);
-  background: white;
+.cubos-button--outline {
+  color: var(--cubos-button-outline-color, var(--cubos-color-primary, #fa7436));
+  background: var(--cubos-button-outline-background, transparent);
+  border: 1px solid
+    var(
+      --cubos-button-outline-border,
+      var(--cubos-button-outline-color, var(--cubos-color-primary, #fa7436))
+    );
 }
 
-.cubos-button--white {
-  border: 1.5px solid #b7b7b7;
-  background: white;
-  box-shadow: 0 1.5px 3px 0 rgba(38, 110, 255, 0.05);
-  color: black;
+.cubos-button--secondary {
+  color: var(--cubos-button-secondary-color, var(--cubos-color-text, #282a2f));
+  background: var(--cubos-button-secondary-background, var(--cubos-color-surface, #ffffff));
+  border: 1px solid var(--cubos-button-secondary-border, var(--cubos-color-border-strong, #b7b7b7));
+  box-shadow: 0 2px 4px rgba(38, 110, 255, 0.05);
 }

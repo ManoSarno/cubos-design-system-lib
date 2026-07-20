@@ -1,4 +1,4 @@
-interface CautionIconProps {
+export interface CautionIconProps {
   color?: string;
 }
 

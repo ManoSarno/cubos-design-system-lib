@@ -1,4 +1,4 @@
-interface ArrowBackIconProps {
+export interface ArrowBackIconProps {
   color?: string;
 }
 

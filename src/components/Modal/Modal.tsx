@@ -1,61 +1,32 @@
-import { HTMLAttributes } from "react";
-import Button from "../Button/Button";
+import type { HTMLAttributes } from "react";
+
+import Overlay from "../_shared/Overlay/Overlay";
 import "./Modal.css";
 
-export type ModalProps = HTMLAttributes<HTMLElement> & {
+export type ModalProps = HTMLAttributes<HTMLDivElement> & {
   open: boolean;
   width: number;
   height: number;
-  btnConfirmText: string;
-  btnCancelText: string;
-  handleConfirm: () => void;
-  handleCancel: () => void;
 };
 
 function Modal({
   open,
   width,
   height,
-  btnConfirmText,
-  handleConfirm,
-  btnCancelText,
-  handleCancel,
+  children,
+  className,
   ...props
 }: ModalProps) {
   return (
-    <>
-      {open && (
-        <div className="cubos-modal" {...props}>
-          <div
-            className="cubos-modal__content"
-            style={{ width: `${width}px`, height: `${height}px` }}
-          >
-            <div>{props.children}</div>
-
-            <div className="cubos-modal__buttons">
-              <Button
-                variant="rounded"
-                colors="white"
-                onClick={handleCancel}
-                width={205}
-                height={51}
-              >
-                {btnCancelText}
-              </Button>
-              <Button
-                variant="rounded"
-                colors="orange"
-                onClick={handleConfirm}
-                width={110}
-                height={51}
-              >
-                {btnConfirmText}
-              </Button>
-            </div>
-          </div>
-        </div>
-      )}
-    </>
+    <Overlay
+      {...props}
+      open={open}
+      className={className}
+      panelClassName="cubos-modal"
+      panelStyle={{ width, height }}
+    >
+      <div className="cubos-modal__body">{children}</div>
+    </Overlay>
   );
 }
 

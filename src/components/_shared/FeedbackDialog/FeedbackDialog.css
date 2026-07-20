@@ -1,0 +1,101 @@
+.cubos-feedback-dialog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 570px;
+  min-height: min(628px, calc(100vh - 32px));
+  min-height: min(628px, calc(100dvh - 32px));
+  padding: 32px;
+  text-align: center;
+}
+
+.cubos-feedback-dialog__icon {
+  width: min(200px, 45%);
+  line-height: 0;
+}
+
+.cubos-feedback-dialog__icon svg {
+  width: 100%;
+  height: auto;
+}
+
+.cubos-feedback-dialog__title {
+  margin-top: 24px;
+  color: var(--cubos-color-text, #282a2f);
+  font-family: var(--cubos-font-family, "Poppins", sans-serif);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.cubos-feedback-dialog__description {
+  margin: 12px 0 0;
+  color: var(--cubos-color-text-muted, #747b84);
+  font-family: var(--cubos-font-family, "Poppins", sans-serif);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.cubos-feedback-dialog__actions {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.cubos-feedback-dialog__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  padding: 8px;
+  border: 0;
+  color: var(--orange-400, var(--cubos-color-primary, #fa7436));
+  background: transparent;
+  font-family: var(--cubos-font-family, "Poppins", sans-serif);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cubos-feedback-dialog__link:focus-visible {
+  border-radius: 4px;
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.cubos-feedback-dialog__link svg {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 520px), (max-height: 680px) {
+  .cubos-feedback-dialog {
+    justify-content: flex-start;
+    min-height: 0;
+    padding: 24px;
+  }
+
+  .cubos-feedback-dialog__icon {
+    width: 120px;
+  }
+
+  .cubos-feedback-dialog__title {
+    margin-top: 16px;
+    font-size: 20px;
+  }
+
+  .cubos-feedback-dialog__description {
+    font-size: 16px;
+  }
+
+  .cubos-feedback-dialog__actions {
+    flex-direction: column-reverse;
+  }
+
+  .cubos-feedback-dialog__actions .cubos-button {
+    width: 100% !important;
+  }
+}
