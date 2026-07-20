@@ -3,6 +3,9 @@
   "version": "0.2.0",
   "license": "MIT",
   "author": "Manoela Sarno Fonseca",
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -20,30 +23,24 @@
     },
     "./package.json": "./package.json"
   },
-  "files": [
-    "dist"
-  ],
-  "engines": {
-    "node": ">=20"
-  },
   "scripts": {
     "dev": "tsdx dev",
     "build": "tsdx build",
-    "test": "tsdx test",
-    "test:watch": "tsdx test --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "lint": "tsdx lint",
     "format": "tsdx format",
     "format:check": "tsdx format --check",
     "typecheck": "tsdx typecheck",
-    "prepublishOnly": "bun run typecheck && bun run build",
+    "prepublishOnly": "bun run lint && bun run typecheck && bun run test && bun run build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "peerDependencies": {
-    "react": ">=18",
-    "react-dom": ">=18"
-  },
   "devDependencies": {
+    "@storybook/addon-a11y": "^10.5.2",
+    "@storybook/addon-docs": "^10.5.2",
+    "@storybook/addon-webpack5-compiler-swc": "^4.0.3",
+    "@storybook/react-webpack5": "^10.5.2",
     "@testing-library/react": "^16.1.0",
     "@types/node": "^22.10.2",
     "@types/react": "^18.3.17",
@@ -53,13 +50,16 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "sass": "^1.101.0",
+    "storybook": "^10.5.2",
     "tsdx": "^2.0.0",
     "typescript": "^5.7.2",
-    "storybook": "^10.5.2",
-    "@storybook/react-webpack5": "^10.5.2",
-    "@storybook/addon-webpack5-compiler-swc": "^4.0.3",
-    "@storybook/addon-a11y": "^10.5.2",
-    "@storybook/addon-docs": "^10.5.2",
-    "@storybook/addon-onboarding": "^10.5.2"
+    "vitest": "^4.1.10"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }
