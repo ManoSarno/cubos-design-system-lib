@@ -35,7 +35,9 @@
     "format": "tsdx format",
     "format:check": "tsdx format --check",
     "typecheck": "tsdx typecheck",
-    "prepublishOnly": "bun run typecheck && bun run build"
+    "prepublishOnly": "bun run typecheck && bun run build",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "peerDependencies": {
     "react": ">=18",
@@ -52,6 +54,12 @@
     "react-dom": "^18.3.1",
     "sass": "^1.101.0",
     "tsdx": "^2.0.0",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "storybook": "^10.5.2",
+    "@storybook/react-webpack5": "^10.5.2",
+    "@storybook/addon-webpack5-compiler-swc": "^4.0.3",
+    "@storybook/addon-a11y": "^10.5.2",
+    "@storybook/addon-docs": "^10.5.2",
+    "@storybook/addon-onboarding": "^10.5.2"
   }
 }
